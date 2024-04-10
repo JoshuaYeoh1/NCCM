@@ -14,10 +14,12 @@ public class MouseManager : MonoBehaviour
         
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    public bool canClick=true;
+
     public LayerMask layers;
 
     [Header("Leniency")]
-    public float tapRadius=.2f;
+    public float tapRadius=.01f;
     Vector2 startTapPos, endTapPos;
     float lastTappedTime;
     public float minSwipeDistance = 100; // distance for a tap to be considered a swipe
@@ -25,7 +27,7 @@ public class MouseManager : MonoBehaviour
 
     void Update()
     {
-        CheckClick();
+        if(canClick) CheckClick();
     }
 
     void CheckClick()
