@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Shutter : MonoBehaviour
 {
-    public bool isClosed;
-
     public Vector3 openPos;
     public Vector3 closePos;
 
@@ -19,20 +17,25 @@ public class Shutter : MonoBehaviour
     {
         EventManager.Current.ShutterActivateEvent -= OnShutterActivate;
     }
-    
-    void OnShutterActivate()
+
+    void Start()
     {
+        OnShutterActivate(Singleton.Current.shuttersClosed);
+    }
+    
+    void OnShutterActivate(bool toggle)
+    {
+        Singleton.Current.shuttersClosed = toggle;
+
         LeanTween.cancel(gameObject);
 
-        if(isClosed)
+        if(toggle)
         {
-            isClosed=false;
-            LeanTween.move(gameObject, openPos, animTime).setEaseInOutSine();
+            LeanTween.move(gameObject, closePos, animTime).setEaseInOutSine();
         }
         else
         {
-            isClosed=true;
-            LeanTween.move(gameObject, closePos, animTime).setEaseInOutSine();
+            LeanTween.move(gameObject, openPos, animTime).setEaseInOutSine();
         }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShutterButton : MonoBehaviour
+public class LightSwitch : MonoBehaviour
 {
     void OnEnable()
     {
@@ -17,6 +17,6 @@ public class ShutterButton : MonoBehaviour
     {
         if(target!=gameObject) return;
         
-        EventManager.Current.OnShutterActivate(!Singleton.Current.shuttersClosed);
+        EventManager.Current.OnToggleLights(!Singleton.Current.lightsOn);
     }
 }

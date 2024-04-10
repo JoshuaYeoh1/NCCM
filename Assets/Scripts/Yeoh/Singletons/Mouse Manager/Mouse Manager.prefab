@@ -48,7 +48,7 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 9
-  clickRange: 2
+  clickRange: 1.5
   ignoreTimescale: 0
   clickRadius: 0.01
   minSwipeDistance: 100

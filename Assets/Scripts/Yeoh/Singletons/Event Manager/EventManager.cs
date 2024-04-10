@@ -37,20 +37,25 @@ public class EventManager : MonoBehaviour
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public event Action<GameObject> ClickEvent;
-    public event Action ShutterActivateEvent;
+    public event Action<bool> ShutterActivateEvent;
     public event Action<bool> ToggleFirstPersonEvent;
+    public event Action<bool> ToggleLightsEvent;
 
     public void OnClick(GameObject target)
     {
         ClickEvent?.Invoke(target);
     }
-    public void OnShutterActivate()
+    public void OnShutterActivate(bool toggle)
     {
-        ShutterActivateEvent?.Invoke();
+        ShutterActivateEvent?.Invoke(toggle);
     }
     public void OnToggleFirstPerson(bool toggle)
     {
         ToggleFirstPersonEvent?.Invoke(toggle);
+    }
+    public void OnToggleLights(bool toggle)
+    {
+        ToggleLightsEvent?.Invoke(toggle);
     }
     
     

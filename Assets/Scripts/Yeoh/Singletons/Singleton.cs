@@ -46,4 +46,9 @@ public class Singleton : MonoBehaviour
     {
         canView=true;
     }
+
+    public bool shuttersClosed;
+    public bool lightsOn=true;
+    public bool doorLocked;
+    
 }
