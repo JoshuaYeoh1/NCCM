@@ -13,9 +13,9 @@ public class ShutterButton : MonoBehaviour
         EventManager.Current.ClickEvent -= OnClick;
     }
     
-    void OnClick(GameObject subject)
+    void OnClick(GameObject target)
     {
-        if(subject!=gameObject) return;
+        if(target!=gameObject) return;
 
         EventManager.Current.OnShutterActivate();
     }

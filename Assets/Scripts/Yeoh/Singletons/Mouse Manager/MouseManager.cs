@@ -34,6 +34,7 @@ public class MouseManager : MonoBehaviour
     public bool canClick=true;
     public LayerMask layers;
     public float clickRange=5;
+    public bool ignoreTimescale;
 
     [Header("Leniency")]
     public float clickRadius=.01f;
@@ -44,11 +45,15 @@ public class MouseManager : MonoBehaviour
 
     void Update()
     {
-        if(canClick) CheckClick();
+        CheckClick();
     }
 
     void CheckClick()
     {
+        if(!canClick) return;
+
+        if(!ignoreTimescale && Time.timeScale==0) return;
+
         // Check if the current pointer event is over a UI element
         if(IsPointerOverUI(Input.mousePosition)) return;
 

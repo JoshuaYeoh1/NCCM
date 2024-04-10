@@ -6,8 +6,7 @@ using Cinemachine;
 public class FPSCamera : MonoBehaviour
 {
     public GameObject player;
-
-    public bool firstPersonEnabled=true;
+    public GameObject fpsCanvas;
 
     CinemachineVirtualCamera cineCam;
 
@@ -16,14 +15,29 @@ public class FPSCamera : MonoBehaviour
         cineCam = GetComponent<CinemachineVirtualCamera>();
     }
 
-    void Start()
+    void OnEnable()
     {
-        ToggleFirstPerson(firstPersonEnabled);
+        EventManager.Current.ToggleFirstPersonEvent += OnToggleFirstPerson;
+    }
+    void OnDisable()
+    {
+        EventManager.Current.ToggleFirstPersonEvent -= OnToggleFirstPerson;
     }
 
-    void ToggleFirstPerson(bool toggle)
+    public bool firstPersonEnabled=true;
+
+    void Start()
     {
+        OnToggleFirstPerson(firstPersonEnabled);
+    }
+
+    void OnToggleFirstPerson(bool toggle)
+    {
+        cineCam.enabled = toggle;
+        
         firstPersonEnabled = toggle;
+
+        fpsCanvas.SetActive(toggle);
 
         MouseManager.Current.LockMouse(toggle);
     }

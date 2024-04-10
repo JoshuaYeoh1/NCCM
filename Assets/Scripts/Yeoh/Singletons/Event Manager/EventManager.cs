@@ -38,6 +38,7 @@ public class EventManager : MonoBehaviour
 
     public event Action<GameObject> ClickEvent;
     public event Action ShutterActivateEvent;
+    public event Action<bool> ToggleFirstPersonEvent;
 
     public void OnClick(GameObject target)
     {
@@ -46,6 +47,10 @@ public class EventManager : MonoBehaviour
     public void OnShutterActivate()
     {
         ShutterActivateEvent?.Invoke();
+    }
+    public void OnToggleFirstPerson(bool toggle)
+    {
+        ToggleFirstPersonEvent?.Invoke(toggle);
     }
     
     
