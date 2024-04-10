@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7351351482397823405}
   - component: {fileID: 1229407582880979806}
   - component: {fileID: 3735145423002512793}
+  - component: {fileID: 5241790646769959884}
   m_Layer: 3
-  m_Name: Button
+  m_Name: Shutter Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,6 +83,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12923545, y: 0.14282925, z: 0.16471642}
   m_Center: {x: 0, y: 0.06890274, z: 0.0025666058}
+--- !u!114 &5241790646769959884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900945163739046907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3e013f21a2f804d97690262137e1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6762360846727295203
 PrefabInstance:
   m_ObjectHideFlags: 0

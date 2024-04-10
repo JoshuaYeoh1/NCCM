@@ -114,6 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7561879805026782679}
+  - component: {fileID: 1713770714002748329}
   m_Layer: 3
   m_Name: Shutter
   m_TagString: Untagged
@@ -137,3 +138,19 @@ Transform:
   - {fileID: 6400506649714452698}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1713770714002748329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655557384209025950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b823aaa9fe8e844a34ba44e538c91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isClosed: 1
+  openPos: {x: -0.652, y: 3.268, z: 2.872}
+  closePos: {x: -0.652, y: 1.653, z: 2.872}
+  animTime: 0.5

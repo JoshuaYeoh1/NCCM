@@ -14,14 +14,31 @@ public class MouseManager : MonoBehaviour
         
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public bool canClick=true;
+    public void LockMouse(bool toggle)
+    {
+        if(toggle)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
 
+        Cursor.visible = !toggle;
+    }
+        
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    [Header("Raycast")]
+    public bool canClick=true;
     public LayerMask layers;
+    public float clickRange=5;
 
     [Header("Leniency")]
-    public float tapRadius=.01f;
-    Vector2 startTapPos, endTapPos;
-    float lastTappedTime;
+    public float clickRadius=.01f;
+    Vector2 startClickPos, endClickPos;
+    float lastClickedTime;
     public float minSwipeDistance = 100; // distance for a tap to be considered a swipe
     public float minSwipeTime = 0.25f; // time for a tap to be considered a swipe
 
@@ -37,22 +54,22 @@ public class MouseManager : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            startTapPos = Input.mousePosition; // Record the start position and time of the tap
-            lastTappedTime = Time.time;
+            startClickPos = Input.mousePosition; // Record the start position and time of the tap
+            lastClickedTime = Time.time;
         }
         else if(Input.GetMouseButtonUp(0))
         {
-            endTapPos = Input.mousePosition;
+            endClickPos = Input.mousePosition;
 
-            float swipeDistance = Vector2.Distance(startTapPos, endTapPos); // Calculate the distance moved and time taken
+            float swipeDistance = Vector2.Distance(startClickPos, endClickPos); // Calculate the distance moved and time taken
 
-            if(swipeDistance<minSwipeDistance && Time.time-lastTappedTime < minSwipeTime) // Check if tapped
+            if(swipeDistance<minSwipeDistance && Time.time-lastClickedTime < minSwipeTime) // Check if tapped
             {
                 DoSphereCast();
             }
             else // Check if swiped
             {
-                Vector2 swipeVector = endTapPos-startTapPos;
+                Vector2 swipeVector = endClickPos-startClickPos;
                 Vector2 swipeDirection = swipeVector.normalized; //Debug.Log("Swiped in direction: " + swipeDirection);
             }
         }
@@ -83,7 +100,7 @@ public class MouseManager : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.SphereCast(ray, tapRadius, out RaycastHit hit, Mathf.Infinity, layers, QueryTriggerInteraction.Collide))
+        if(Physics.SphereCast(ray, clickRadius, out RaycastHit hit, clickRange, layers, QueryTriggerInteraction.Collide))
         {
             Collider other = hit.collider;
             
