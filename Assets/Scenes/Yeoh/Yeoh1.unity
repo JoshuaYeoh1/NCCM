@@ -2714,6 +2714,7 @@ MonoBehaviour:
     - {fileID: 1035310845}
     - {fileID: 622148866}
     - {fileID: 272790843}
+  occupiedSpots: []
 --- !u!4 &1249415075
 Transform:
   m_ObjectHideFlags: 0
