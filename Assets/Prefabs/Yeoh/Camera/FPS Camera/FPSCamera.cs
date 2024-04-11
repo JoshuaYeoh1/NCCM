@@ -9,10 +9,12 @@ public class FPSCamera : MonoBehaviour
     public GameObject fpsCanvas;
 
     CinemachineVirtualCamera cineCam;
+    CinemachinePOV cinePOV;
 
     void Awake()
     {
         cineCam = GetComponent<CinemachineVirtualCamera>();
+        cinePOV = cineCam.GetCinemachineComponent<CinemachinePOV>();
     }
 
     void OnEnable()
@@ -33,11 +35,16 @@ public class FPSCamera : MonoBehaviour
 
     void OnToggleFirstPerson(bool toggle)
     {
-        cineCam.enabled = toggle;
-        
         firstPersonEnabled = toggle;
 
-        fpsCanvas.SetActive(toggle);
+        fpsCanvas.SetActive(toggle); // crosshair
+
+        cinePOV.m_HorizontalAxis.m_InputAxisName = toggle ? "Mouse X" : "";
+        cinePOV.m_VerticalAxis.m_InputAxisName = toggle ? "Mouse Y" : "";
+
+        // kill momentum
+        cinePOV.m_HorizontalAxis.m_InputAxisValue = 0;
+        cinePOV.m_VerticalAxis.m_InputAxisValue = 0;
 
         MouseManager.Current.LockMouse(toggle);
     }
@@ -52,8 +59,6 @@ public class FPSCamera : MonoBehaviour
 
     void RotatePlayerWithCamera()
     {
-        CinemachinePOV cinePOV = cineCam.GetCinemachineComponent<CinemachinePOV>();
-
         float horizontalAxisValue = cinePOV.m_HorizontalAxis.Value;
 
         player.transform.rotation = Quaternion.Euler(0f, horizontalAxisValue, 0f);

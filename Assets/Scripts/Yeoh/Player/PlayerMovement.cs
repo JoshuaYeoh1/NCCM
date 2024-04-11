@@ -22,6 +22,20 @@ public class PlayerMovement : MonoBehaviour
         defMoveSpeed = moveSpeed;
     }
 
+    void OnEnable()
+    {
+        EventManager.Current.ToggleFirstPersonEvent += OnToggleFirstPerson;
+    }
+    void OnDisable()
+    {
+        EventManager.Current.ToggleFirstPersonEvent -= OnToggleFirstPerson;
+    }
+
+    void OnToggleFirstPerson(bool toggle)
+    {
+        canMove = toggle;
+    }
+
     void Update()
     {
         if(canMove) CheckInput();

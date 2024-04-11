@@ -50,5 +50,5 @@ public class Singleton : MonoBehaviour
     public bool shuttersClosed;
     public bool lightsOn=true;
     public bool doorLocked;
-    
+    public bool annOSView;
 }
