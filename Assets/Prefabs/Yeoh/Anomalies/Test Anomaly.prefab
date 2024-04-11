@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9130252461152698010}
   - component: {fileID: 5347233198657747039}
   m_Layer: 0
-  m_Name: Anomaly
+  m_Name: Test Anomaly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
