@@ -104,6 +104,8 @@ public class AnnOS : MonoBehaviour
         }
     }
 
+    int currentCam=1;
+
     void SwitchCamView(int num)
     {
         for(int i=0; i<camViews.Length; i++)
@@ -111,6 +113,10 @@ public class AnnOS : MonoBehaviour
             if(i==num)
             {
                 camViews[i].SetActive(true);
+
+                currentCam=num+1;
+
+                EventManager.Current.OnChangeCamera(num+1);
             }
             else camViews[i].SetActive(false);
         }

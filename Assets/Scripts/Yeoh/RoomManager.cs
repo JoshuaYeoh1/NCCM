@@ -41,20 +41,40 @@ public class RoomManager : MonoBehaviour
         return room;
     }
     
-    public Transform GetRandomSpot(Room room)
+    public Transform GetRandomSpot(Room room, Transform prevSpot=null)
     {
-        Transform spot=null;
+        Transform newSpot=null;
 
         for(int i=0; i<20; i++)
         {
-            spot = room.spawnpoints[Random.Range(0, room.spawnpoints.Count)];
+            newSpot = room.spawnpoints[Random.Range(0, room.spawnpoints.Count)];
 
-            if(!occupiedSpots.Contains(spot)) break;
+            if(!occupiedSpots.Contains(newSpot)) break;
         }
 
-        if(spot) occupiedSpots.Add(spot);
+        return newSpot;
+    }
 
-        return spot;
+    public void OccupySpot(Transform spot)
+    {
+        if(spot)
+        {
+            if(!occupiedSpots.Contains(spot))
+            {
+                occupiedSpots.Add(spot);
+            }
+        }
+    }
+
+    public void UnoccupySpot(Transform spot)
+    {
+        if(spot)
+        {
+            if(occupiedSpots.Contains(spot))
+            {
+                occupiedSpots.Remove(spot);
+            }
+        }
     }
 
     public bool IsPlayerRoom(Room room)

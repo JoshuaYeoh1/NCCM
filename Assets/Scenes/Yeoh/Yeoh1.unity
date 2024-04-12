@@ -3887,7 +3887,7 @@ MonoBehaviour:
   anomalies:
   - {fileID: 2918394510846950035, guid: 6d840f2f8e351864990355cb2a5f17f4, type: 3}
   activeAnomalies: []
-  maxActiveAnomalies: 2
+  maxActiveAnomalies: 1
   spawnTime: {x: 3, y: 5}
 --- !u!4 &2006861189
 Transform:

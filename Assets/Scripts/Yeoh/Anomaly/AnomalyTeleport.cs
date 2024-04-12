@@ -6,9 +6,6 @@ public class AnomalyTeleport : MonoBehaviour
 {
     public Anomaly anomaly;
 
-    [HideInInspector] public Room currentRoom;
-    [HideInInspector] public Transform currentSpot;
-
     public Vector2 tpTime = new Vector2(10, 15);
     public Vector2Int tpCount = new Vector2Int(2, 4);
 
@@ -34,15 +31,17 @@ public class AnomalyTeleport : MonoBehaviour
             {
                 tpLeft--;
 
-                Room room = RoomManager.Current.GetRandomRoom(currentRoom);
+                Room room = RoomManager.Current.GetRandomRoom(anomaly.currentRoom);
 
                 Teleport(room);
             }
             else
             {
-                if(currentRoom!=RoomManager.Current.GetPlayerRoom())
+                if(anomaly.currentRoom!=RoomManager.Current.GetPlayerRoom())
                 {
                     Teleport(RoomManager.Current.GetPlayerRoom());
+
+                    EventManager.Current.OnAnomalyReachedWindow(anomaly.gameObject);
                 }
 
                 // temp destroy
@@ -51,28 +50,12 @@ public class AnomalyTeleport : MonoBehaviour
         }
     }
 
-    void Teleport(Room room)
+    void Teleport(Room newRoom)
     {
-        Transform newSpot = RoomManager.Current.GetRandomSpot(room);
+        Transform newSpot = RoomManager.Current.GetRandomSpot(newRoom, anomaly.currentSpot);
 
         if(!newSpot) return;
 
-        currentRoom = room;
-
-        transform.position = newSpot.position;
-        transform.rotation = newSpot.rotation;
-
-        RoomManager.Current.occupiedSpots.Remove(currentSpot);
-
-        currentSpot = newSpot;
-
-        anomaly.billboard.faceCamera = room.roomCam.transform;
-
-        Debug.Log($"{anomaly.gameObject.name} teleported to {room.name}");
-    }
-
-    void OnDestroy()
-    {
-        RoomManager.Current.occupiedSpots.Remove(currentSpot);
+        EventManager.Current.OnAnomalyTeleport(anomaly.gameObject, newRoom, newSpot);
     }
 }

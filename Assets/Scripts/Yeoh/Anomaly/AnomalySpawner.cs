@@ -16,7 +16,7 @@ public class AnomalySpawner : MonoBehaviour
     public List<GameObject> anomalies = new();
 
     public List<GameObject> activeAnomalies = new();
-    public int maxActiveAnomalies=2;
+    public int maxActiveAnomalies=1;
 
     public Vector2 spawnTime = new Vector2(20, 30);
 
@@ -50,17 +50,6 @@ public class AnomalySpawner : MonoBehaviour
 
         GameObject spawned = Instantiate(prefab);
 
-        Anomaly anomaly = spawned.GetComponent<Anomaly>();
-
-        anomaly.tp.currentRoom = room;
-
-        spawned.transform.position = spot.position;
-        spawned.transform.rotation = spot.rotation;
-
-        anomaly.tp.currentSpot = spot;
-
-        anomaly.billboard.faceCamera = room.roomCam.transform;
-
-        Debug.Log($"Spawned {spawned.name} in {room.name}");
+        EventManager.Current.OnAnomalySpawn(spawned, room, spot);
     }
 }
