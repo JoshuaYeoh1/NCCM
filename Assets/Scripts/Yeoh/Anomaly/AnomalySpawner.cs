@@ -29,7 +29,12 @@ public class AnomalySpawner : MonoBehaviour
     {
         while(true)
         {
-            GameObject prefab = anomalies[Random.Range(0, anomalies.Count)];
+            GameObject prefab=null;
+            
+            if(anomalies.Count>0)
+            {
+                prefab = anomalies[Random.Range(0, anomalies.Count)];
+            }
 
             yield return new WaitForSeconds(Random.Range(spawnTime.x, spawnTime.y));
 
@@ -42,6 +47,8 @@ public class AnomalySpawner : MonoBehaviour
 
     void SpawnAnomaly(GameObject prefab)
     {
+        if(!prefab) return;
+
         Room room = RoomManager.Current.GetRandomRoom();
 
         Transform spot = RoomManager.Current.GetRandomSpot(room);

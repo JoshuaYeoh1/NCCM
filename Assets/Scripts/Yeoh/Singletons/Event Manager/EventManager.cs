@@ -38,6 +38,7 @@ public class EventManager : MonoBehaviour
 
     public event Action<GameObject> ClickEvent;
     public event Action<bool> ShutterActivateEvent;
+    public event Action ShutterBreakEvent;
     public event Action<bool> ToggleFirstPersonEvent;
     public event Action<bool> ToggleLightsEvent;
     public event Action<int> ChangeCameraEvent;
@@ -49,6 +50,10 @@ public class EventManager : MonoBehaviour
     public void OnShutterActivate(bool toggle)
     {
         ShutterActivateEvent?.Invoke(toggle);
+    }
+    public void OnShutterBreak()
+    {
+        ShutterBreakEvent?.Invoke();
     }
     public void OnToggleFirstPerson(bool toggle)
     {
@@ -67,7 +72,12 @@ public class EventManager : MonoBehaviour
 
     public event Action<GameObject, Room, Transform> AnomalySpawnEvent;
     public event Action<GameObject, Room, Transform> AnomalyTeleportEvent;
-    public event Action AnomalyReachedWindowEvent;
+    public event Action<GameObject> AnomalyReachedWindowEvent;
+    public event Action<GameObject> AnomalyAttackEvent;
+    public event Action<GameObject> AnomalyJumpscareEvent;
+    public event Action<GameObject> AnomalyStunEvent;
+    public event Action<GameObject> AnomalyExpelEvent;
+    public event Action<GameObject> AnomalyDespawnEvent;
 
     public void OnAnomalySpawn(GameObject spawned, Room room, Transform spot)
     {
@@ -83,9 +93,37 @@ public class EventManager : MonoBehaviour
     }
     public void OnAnomalyReachedWindow(GameObject anomaly)
     {
-        AnomalyReachedWindowEvent?.Invoke();
+        AnomalyReachedWindowEvent?.Invoke(anomaly);
 
         Debug.Log($"{anomaly.name} reached Player Window");
+    }
+    public void OnAnomalyAttack(GameObject attacker)
+    {
+        AnomalyAttackEvent?.Invoke(attacker);
+
+        Debug.Log($"{attacker.name} attacked");
+    }
+    public void OnAnomalyJumpscare(GameObject predator)
+    {
+        AnomalyJumpscareEvent?.Invoke(predator);
+
+        Debug.Log($"{predator.name} JUMPSCARE AHAHAHAHA");
+    }
+    public void OnAnomalyStun(GameObject victim)
+    {
+        AnomalyStunEvent?.Invoke(victim);
+    }
+    public void OnAnomalyExpel(GameObject victim)
+    {
+        AnomalyExpelEvent?.Invoke(victim);
+
+        Debug.Log($"{victim.name} got expelled");
+    }
+    public void OnAnomalyDespawn(GameObject anomaly)
+    {
+        AnomalyDespawnEvent?.Invoke(anomaly);
+
+        Debug.Log($"{anomaly.name} disappeared");
     }
     
 }

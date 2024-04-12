@@ -12,20 +12,24 @@ public class Shutter : MonoBehaviour
     void OnEnable()
     {
         EventManager.Current.ShutterActivateEvent += OnShutterActivate;
+        EventManager.Current.ShutterBreakEvent += OnShutterBreak;
     }
     void OnDisable()
     {
         EventManager.Current.ShutterActivateEvent -= OnShutterActivate;
+        EventManager.Current.ShutterBreakEvent -= OnShutterBreak;
     }
 
     void Start()
     {
-        OnShutterActivate(Singleton.Current.shuttersClosed);
+        OnShutterActivate(Singleton.Current.shutterClosed);
     }
     
     void OnShutterActivate(bool toggle)
     {
-        Singleton.Current.shuttersClosed = toggle;
+        if(Singleton.Current.shutterHp<=0) return;
+
+        Singleton.Current.shutterClosed = toggle;
 
         LeanTween.cancel(gameObject);
 
@@ -37,6 +41,13 @@ public class Shutter : MonoBehaviour
         {
             LeanTween.move(gameObject, openPos, animTime).setEaseInOutSine();
         }
+    }
+
+    void OnShutterBreak()
+    {
+        Singleton.Current.shutterClosed = false;
+
+        Destroy(gameObject);
     }
 
     [ContextMenu("Record Open Position")]

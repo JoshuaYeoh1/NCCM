@@ -4,55 +4,41 @@ using UnityEngine;
 
 public class Anomaly : MonoBehaviour
 {
-    public SpriteBillboard billboard;
+    [HideInInspector] public AnomalyMove move;
+    [HideInInspector] public AnomalyStun stun;
+    [HideInInspector] public AnomalyExposure exposure;
     
-    [HideInInspector] public Room currentRoom;
-    [HideInInspector] public Transform currentSpot;
+    void Awake()
+    {
+        move=GetComponent<AnomalyMove>();
+        stun=GetComponent<AnomalyStun>();
+        exposure=GetComponent<AnomalyExposure>();
+    }
 
     void OnEnable()
     {
         EventManager.Current.AnomalySpawnEvent += OnAnomalySpawn;
-        EventManager.Current.AnomalyTeleportEvent += OnAnomalyTeleport;
+        EventManager.Current.AnomalyDespawnEvent += OnAnomalyDespawn;
     }
     void OnDisable()
     {
         EventManager.Current.AnomalySpawnEvent -= OnAnomalySpawn;
-        EventManager.Current.AnomalyTeleportEvent -= OnAnomalyTeleport;
+        EventManager.Current.AnomalyDespawnEvent -= OnAnomalyDespawn;
     }
 
-    void Start()
-    {
-        AnomalySpawner.Current.activeAnomalies.Add(gameObject);
-    }
-    void OnDestroy()
-    {
-        AnomalySpawner.Current.activeAnomalies.Remove(gameObject);
-
-        RoomManager.Current.UnoccupySpot(currentSpot);
-    }    
-    
     void OnAnomalySpawn(GameObject spawned, Room room, Transform spot)
     {
         if(spawned!=gameObject) return;
 
-        OnAnomalyTeleport(gameObject, room, spot);
+        AnomalySpawner.Current.activeAnomalies.Add(gameObject);
     }
 
-    void OnAnomalyTeleport(GameObject teleportee, Room newRoom, Transform newSpot)
+    void OnAnomalyDespawn(GameObject anomaly)
     {
-        if(teleportee!=gameObject) return;
-        
-        currentRoom = newRoom;
+        if(anomaly!=gameObject) return;
 
-        RoomManager.Current.UnoccupySpot(currentSpot);
+        AnomalySpawner.Current.activeAnomalies.Remove(gameObject);
 
-        transform.position = newSpot.position;
-        transform.rotation = newSpot.rotation;
-
-        currentSpot = newSpot;
-
-        RoomManager.Current.OccupySpot(currentSpot);
-
-        billboard.faceCamera = newRoom.roomCam.transform;
-    }
+        Destroy(gameObject, .1f);
+    }    
 }

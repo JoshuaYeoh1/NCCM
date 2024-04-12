@@ -10,7 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3816762821230632054}
   - component: {fileID: 9130252461152698010}
-  - component: {fileID: 5347233198657747039}
+  - component: {fileID: 1956091995989127787}
+  - component: {fileID: 1546173879362895260}
+  - component: {fileID: 2848803891153716437}
+  - component: {fileID: 7557427470317703323}
+  - component: {fileID: 4749797674412440015}
   m_Layer: 0
   m_Name: Test Anomaly
   m_TagString: Untagged
@@ -46,9 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b432ecd0897bc844eae3ad34b1bdce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tp: {fileID: 5347233198657747039}
-  billboard: {fileID: 3952023516951402946}
---- !u!114 &5347233198657747039
+  move: {fileID: 0}
+  stun: {fileID: 0}
+  exposure: {fileID: 0}
+--- !u!114 &1956091995989127787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,17 +62,78 @@ MonoBehaviour:
   m_GameObject: {fileID: 2918394510846950035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b941e076d5d51244bac5a58ede08297e, type: 3}
+  m_Script: {fileID: 11500000, guid: 24caeff64a071d74585e15b018a3e116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anomaly: {fileID: 9130252461152698010}
+  anomaly: {fileID: 0}
+--- !u!114 &1546173879362895260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918394510846950035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fc1df67cfc914498bf93d724060097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboard: {fileID: 3952023516951402946}
+  moveDelay: {x: 10, y: 15}
+  moveCycles: {x: 2, y: 4}
   currentRoom:
     name: 
     roomObj: {fileID: 0}
     roomCam: {fileID: 0}
     spawnpoints: []
-  tpTime: {x: 5, y: 10}
-  tpCount: {x: 2, y: 4}
+  currentSpot: {fileID: 0}
+--- !u!114 &2848803891153716437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918394510846950035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ecb678da2e6514d81cff7c612a312e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exposeSpeed: 1
+  maxExposure: 10
+  exposure: 0
+  canJumpscare: 0
+--- !u!114 &7557427470317703323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918394510846950035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d551b7568ff7748bd58f7aeff922d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  immuneToSound: 0
+  immuneToFlash: 0
+  immuneToCage: 0
+  immuneToDoorLock: 0
+  immuneToLight: 0
+  stunCombo: 0
+  stunsToExpel: 2
+--- !u!114 &4749797674412440015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918394510846950035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12764ba2861be84ca0499a746ddec51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4515040610068683874
 GameObject:
   m_ObjectHideFlags: 0
