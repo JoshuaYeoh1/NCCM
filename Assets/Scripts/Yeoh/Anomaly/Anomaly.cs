@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AnomalyType
+{
+    Passive,
+    Aggresive,
+}
+
 public class Anomaly : MonoBehaviour
 {
     [HideInInspector] public AnomalyMove move;

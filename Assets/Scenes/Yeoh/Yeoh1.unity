@@ -2512,6 +2512,55 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1190078292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1216372281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216372283}
+  - component: {fileID: 1216372282}
+  m_Layer: 0
+  m_Name: Level 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1216372282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216372281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8597c777702c1d44abbe26728b9f053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pocong: {fileID: 2918394510846950035, guid: 045afbb2084316649bf9d20221d8550a, type: 3}
+  ponna: {fileID: 2918394510846950035, guid: e63c667af27ba4e4c9c76f36f6a03195, type: 3}
+  toyol: {fileID: 2918394510846950035, guid: f162c372956dccd4c84d3dda6ab5b30c, type: 3}
+  minyak: {fileID: 2918394510846950035, guid: 1419d3092c4471c4c8d9d9bbb7915be8, type: 3}
+  pretas: {fileID: 2918394510846950035, guid: c9e90fdd8c02d9e48a0c157a558fb009, type: 3}
+--- !u!4 &1216372283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216372281}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234731328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3855,11 +3904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee0445f00aad7243ba3c9cbf3a765f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anomalies:
-  - {fileID: 2918394510846950035, guid: 6d840f2f8e351864990355cb2a5f17f4, type: 3}
+  anomalies: []
   activeAnomalies: []
   maxActiveAnomalies: 1
-  spawnTime: {x: 3, y: 5}
+  spawnTime: {x: 10, y: 15}
 --- !u!4 &2006861189
 Transform:
   m_ObjectHideFlags: 0
@@ -5912,6 +5960,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1216372283}
   - {fileID: 410087041}
   - {fileID: 432113243}
   - {fileID: 1025358562}

@@ -35,6 +35,8 @@ public class TimeManager : MonoBehaviour
     {
         while(true)
         {
+            EventManager.Current.OnHourTick(hour);
+
             yield return new WaitForSeconds(realHourInterval);
 
             hour++;

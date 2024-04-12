@@ -40,6 +40,7 @@ public class EventManager : MonoBehaviour
     public event Action<bool> ToggleFirstPersonEvent;
     public event Action<int> ChangeCameraEvent;
     public event Action ClockInEvent;
+    public event Action<int> HourTickEvent;
 
     public void OnClick(GameObject target)
     {
@@ -58,6 +59,10 @@ public class EventManager : MonoBehaviour
         ClockInEvent?.Invoke();
 
         Debug.Log($"Clocked in, enjoy your shift...");
+    }
+    public void OnHourTick(int hourNow)
+    {
+        HourTickEvent?.Invoke(hourNow);
     }
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

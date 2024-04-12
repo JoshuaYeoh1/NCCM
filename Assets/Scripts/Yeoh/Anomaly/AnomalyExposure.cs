@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnomalyExposure : MonoBehaviour
 {
+    public AnomalyType type;
+
     public float exposeSpeed=1;
     public float maxExposure=10;
 
@@ -29,18 +31,21 @@ public class AnomalyExposure : MonoBehaviour
         {
             if(Singleton.Current.shutterClosed)
             {
-                EventManager.Current.OnAnomalyAttack(gameObject);
-
-                exposure=0;
-
-                Singleton.Current.shutterHp--;
-
-                if(Singleton.Current.shutterHp<=0)
+                if(type==AnomalyType.Aggresive)
                 {
-                    EventManager.Current.OnShutterBreak();
+                    EventManager.Current.OnAnomalyAttack(gameObject);
+
+                    exposure=0;
+
+                    Singleton.Current.DamageShutter(1);
+                }
+                else if(type==AnomalyType.Passive)
+                {
+                    exposure=0;
                 }
             }
             else canJumpscare=true;
+            
         }
     }
 

@@ -65,5 +65,15 @@ public class Singleton : MonoBehaviour
     {
         shutterHpMax=shutterHp;
     }
+
+    public void DamageShutter(float dmg)
+    {
+        shutterHp-=dmg;
+
+        if(shutterHp<=0)
+        {
+            EventManager.Current.OnShutterBreak();
+        }
+    }
     
 }

@@ -9,12 +9,14 @@ public class AnomalyStun : MonoBehaviour
     public bool immuneToCage;
     public bool immuneToDoorLock;
     public bool immuneToLight;
+    public bool immuneToDark;
 
     bool isSoundStunned;
     bool isFlashStunned;
     bool isCageStunned;
     bool isDoorStunned;
     bool isLightStunned;
+    bool isDarkStunned;
 
     [HideInInspector] public int stunCombo;
 
@@ -27,6 +29,7 @@ public class AnomalyStun : MonoBehaviour
         CheckStun(immuneToCage, Singleton.Current.cageActive, ref isCageStunned);
         CheckStun(immuneToDoorLock, Singleton.Current.doorLocked, ref isDoorStunned);
         CheckStun(immuneToLight, Singleton.Current.lightsOn, ref isLightStunned);
+        CheckStun(immuneToDark, !Singleton.Current.lightsOn, ref isDarkStunned);
     }
 
     void CheckStun(bool isImmune, bool isDefenseActive, ref bool isStunned)
@@ -71,5 +74,6 @@ public class AnomalyStun : MonoBehaviour
         isCageStunned=false;
         isDoorStunned=false;
         isLightStunned=false;
+        isDarkStunned=false;
     }
 }
