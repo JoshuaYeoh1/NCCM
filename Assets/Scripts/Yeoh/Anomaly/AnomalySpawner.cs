@@ -22,6 +22,15 @@ public class AnomalySpawner : MonoBehaviour
 
     void OnEnable()
     {
+        EventManager.Current.ClockInEvent += OnClockIn;
+    }
+    void OnDisable()
+    {
+        EventManager.Current.ClockInEvent -= OnClockIn;
+    }
+    
+    void OnClockIn()
+    {
         StartCoroutine(SpawningAnomaly());
     }
 
@@ -30,7 +39,7 @@ public class AnomalySpawner : MonoBehaviour
         while(true)
         {
             GameObject prefab=null;
-            
+
             if(anomalies.Count>0)
             {
                 prefab = anomalies[Random.Range(0, anomalies.Count)];

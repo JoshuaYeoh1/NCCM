@@ -37,15 +37,53 @@ public class EventManager : MonoBehaviour
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public event Action<GameObject> ClickEvent;
-    public event Action<bool> ShutterActivateEvent;
-    public event Action ShutterBreakEvent;
     public event Action<bool> ToggleFirstPersonEvent;
-    public event Action<bool> ToggleLightsEvent;
     public event Action<int> ChangeCameraEvent;
+    public event Action ClockInEvent;
 
     public void OnClick(GameObject target)
     {
         ClickEvent?.Invoke(target);
+    }
+    public void OnToggleFirstPerson(bool toggle)
+    {
+        ToggleFirstPersonEvent?.Invoke(toggle);
+    }
+    public void OnChangeCamera(int camNumber)
+    {
+        ChangeCameraEvent?.Invoke(camNumber);
+    }
+    public void OnClockIn()
+    {
+        ClockInEvent?.Invoke();
+
+        Debug.Log($"Clocked in, enjoy your shift...");
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public event Action<float> ActivateSoundPitchEvent;
+    public event Action<float> ActivateFlashEvent;
+    public event Action<float> ActivateCageEvent;
+    public event Action<bool> ToggleLightsEvent;
+    public event Action<bool> ShutterActivateEvent;
+    public event Action ShutterBreakEvent;
+    
+    public void OnActivateSoundPitch(float activeTime)
+    {
+        ActivateSoundPitchEvent?.Invoke(activeTime);
+    }
+    public void OnActivateFlash(float activeTime)
+    {
+        ActivateFlashEvent?.Invoke(activeTime);
+    }
+    public void OnActivateCage(float activeTime)
+    {
+        ActivateCageEvent?.Invoke(activeTime);
+    }
+    public void OnToggleLights(bool toggle)
+    {
+        ToggleLightsEvent?.Invoke(toggle);
     }
     public void OnShutterActivate(bool toggle)
     {
@@ -55,18 +93,7 @@ public class EventManager : MonoBehaviour
     {
         ShutterBreakEvent?.Invoke();
     }
-    public void OnToggleFirstPerson(bool toggle)
-    {
-        ToggleFirstPersonEvent?.Invoke(toggle);
-    }
-    public void OnToggleLights(bool toggle)
-    {
-        ToggleLightsEvent?.Invoke(toggle);
-    }
-    public void OnChangeCamera(int camNumber)
-    {
-        ChangeCameraEvent?.Invoke(camNumber);
-    }
+    
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

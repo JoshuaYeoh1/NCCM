@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 370092221967148105}
+  - component: {fileID: 1040385318067748324}
+  - component: {fileID: 4689831152970689542}
   m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
@@ -35,6 +37,48 @@ Transform:
   - {fileID: 1829451230539441085}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1040385318067748324
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664398423475385865}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4689831152970689542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664398423475385865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c513df2c218da340a37e0477e820f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorLockTime: 6
+  unlockIcon: {fileID: 1807557487295374630}
+  lockIcon: {fileID: 7972420630903107550}
 --- !u!1 &1807557487295374630
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,9 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3337199706373978348}
-  - component: {fileID: 8680948225181795920}
   - component: {fileID: 6279164183819633574}
-  - component: {fileID: 7282850385636284288}
   m_Layer: 7
   m_Name: Click Trigger
   m_TagString: Untagged
@@ -182,33 +224,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 370092221967148105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8680948225181795920
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2823667971952317023}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6279164183819633574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -230,21 +245,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9154661, y: 2.078528, z: 0.14622632}
   m_Center: {x: -0.00008305907, y: 1.039264, z: 0.092452094}
---- !u!114 &7282850385636284288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2823667971952317023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c513df2c218da340a37e0477e820f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorLockTime: 5
-  unlockIcon: {fileID: 1807557487295374630}
-  lockIcon: {fileID: 7972420630903107550}
 --- !u!1 &7972420630903107550
 GameObject:
   m_ObjectHideFlags: 0

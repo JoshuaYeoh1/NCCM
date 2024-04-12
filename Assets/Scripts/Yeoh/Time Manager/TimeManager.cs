@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
 
     void Awake()
     {
-        if(!Current) Current=this;        
+        Current=this;        
     }
         
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -17,7 +17,16 @@ public class TimeManager : MonoBehaviour
     public string meridiem="pm";
     public float realHourInterval=45;
 
-    void Start()
+    void OnEnable()
+    {
+        EventManager.Current.ClockInEvent += OnClockIn;
+    }
+    void OnDisable()
+    {
+        EventManager.Current.ClockInEvent -= OnClockIn;
+    }
+    
+    void OnClockIn()
     {
         StartCoroutine(TimeRunning());
     }
