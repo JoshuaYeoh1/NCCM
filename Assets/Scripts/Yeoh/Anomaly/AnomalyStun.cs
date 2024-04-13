@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnomalyStun : MonoBehaviour
 {
+    Anomaly anomaly;
+
     public bool immuneToSound;
     public bool immuneToFlash;
     public bool immuneToCage;
@@ -21,6 +23,11 @@ public class AnomalyStun : MonoBehaviour
     [HideInInspector] public int stunCombo;
 
     public int stunsToExpel=2;
+
+    void Awake()
+    {
+        anomaly=GetComponent<Anomaly>();
+    }
 
     public void CheckAll()
     {

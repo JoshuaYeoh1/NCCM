@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Toyol : MonoBehaviour
 {
-    public AnomalyExposure exposure;
+    Anomaly anomaly;
+
+    void Awake()
+    {
+        anomaly=GetComponent<Anomaly>();
+    }
 
     void OnEnable()
     {
@@ -96,7 +101,7 @@ public class Toyol : MonoBehaviour
         StopCoroutine(trollingShutterRt);
         StopCoroutine(trollingCamRt);
 
-        exposure.canJumpscare=false;
+        anomaly.exposure.canJumpscare=false;
 
         EventManager.Current.OnAnomalyTeleportRandom(gameObject);
         

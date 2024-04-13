@@ -156,11 +156,11 @@ public class EventManager : MonoBehaviour
     {
         AnomalyRecoverEvent?.Invoke(subject);
     }
-    public void OnAnomalyExpel(GameObject victim)
+    public void OnAnomalyExpel(GameObject anomaly)
     {
-        AnomalyExpelEvent?.Invoke(victim);
+        AnomalyExpelEvent?.Invoke(anomaly);
 
-        Debug.Log($"{victim.name} got expelled");
+        Debug.Log($"{anomaly.name} got expelled");
     }
     public void OnAnomalyDespawn(GameObject anomaly)
     {

@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class AnomalyExposure : MonoBehaviour
 {
+    Anomaly anomaly;
+
     public AnomalyType type;
 
-    public float exposeSpeed=1;
     public Vector2 maxExposure = new Vector2(8, 12);
-
     float currentMaxExposure;
-    [HideInInspector] public float currentExposure;
+
+    public float currentExposure;
 
     [Range(0,3)]
     public float damage=1;
+
+    void Awake()
+    {
+        anomaly=GetComponent<Anomaly>();
+    }
 
     void Start()
     {
@@ -29,6 +35,10 @@ public class AnomalyExposure : MonoBehaviour
     {
         if(currentExposure < currentMaxExposure)
         {
+            float exposeSpeed = 1f-((float)anomaly.stun.stunCombo/anomaly.stun.stunsToExpel);
+
+            print(exposeSpeed);
+
             currentExposure += exposeSpeed*Time.deltaTime;
         }
         else currentExposure = currentMaxExposure;
@@ -45,6 +55,8 @@ public class AnomalyExposure : MonoBehaviour
         {
             if(LevelManager.Current.shutterClosed)
             {
+                attackedShutter=true;
+
                 EventManager.Current.OnAnomalyAttack(gameObject, damage);
 
                 currentExposure=0;
@@ -55,5 +67,6 @@ public class AnomalyExposure : MonoBehaviour
         }
     }
 
+    [HideInInspector] public bool attackedShutter;
     [HideInInspector] public bool canJumpscare;
 }

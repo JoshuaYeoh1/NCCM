@@ -121,11 +121,11 @@ public class AnomalyMove : MonoBehaviour
         Teleport(room);
     }
 
-    void OnAnomalyExpel(GameObject victim)
+    void OnAnomalyExpel(GameObject anomaly)
     {
-        if(victim!=gameObject) return;
+        if(anomaly!=gameObject) return;
 
-        EventManager.Current.OnAnomalyTeleportRandom(victim);
+        EventManager.Current.OnAnomalyTeleportRandom(anomaly);
     }
 
     void OnAnomalyDespawn(GameObject anomaly)

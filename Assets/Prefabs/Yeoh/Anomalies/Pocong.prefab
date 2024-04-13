@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  exposeSpeed: 1
   maxExposure: {x: 8, y: 12}
   currentExposure: 0
   damage: 0.5
+  attackedShutter: 0
   canJumpscare: 0
 --- !u!114 &7557427470317703323
 MonoBehaviour:

@@ -93,6 +93,8 @@ public class Shutter : MonoBehaviour
         CameraManager.Current.Shake();
 
         EventManager.Current.OnUIBarUpdate(LevelManager.Current.gameObject, shutterHp, shutterHpMax);
+
+        EventManager.Current.OnAnomalyExpel(attacker);
     }
 
     void OnShutterBreak()

@@ -34,10 +34,26 @@ public class AnomalyStateMachine : MonoBehaviour
 
         /////////////////////////////////////////////////////////////////////////////////////////
 
-        exposingState.AddTransition(stunnedState, (timeInState) =>
+        // exposingState.AddTransition(stunnedState, (timeInState) =>
+        // {
+        //     if(anomaly.stun.stunCombo>0)
+        //     {
+        //         return true;
+        //     }
+        //     return false;
+        // });
+
+        exposingState.AddTransition(roamingState, (timeInState) =>
         {
-            if(anomaly.stun.stunCombo>0)
+            if(anomaly.stun.CanExpel())
             {
+                EventManager.Current.OnAnomalyExpel(anomaly.gameObject);
+
+                return true;
+            }
+            else if(anomaly.exposure.attackedShutter)
+            {
+                anomaly.exposure.attackedShutter=false;
                 return true;
             }
             return false;
@@ -54,25 +70,14 @@ public class AnomalyStateMachine : MonoBehaviour
 
         /////////////////////////////////////////////////////////////////////////////////////////
 
-        stunnedState.AddTransition(roamingState, (timeInState) =>
-        {
-            if(anomaly.stun.CanExpel())
-            {
-                EventManager.Current.OnAnomalyExpel(anomaly.gameObject);
-
-                return true;
-            }
-            return false;
-        });
-
-        stunnedState.AddTransition(exposingState, (timeInState) =>
-        {
-            if(anomaly.stun.stunCombo<=0)
-            {
-                return true;
-            }
-            return false;
-        });
+        // stunnedState.AddTransition(exposingState, (timeInState) =>
+        // {
+        //     if(anomaly.stun.stunCombo<=0)
+        //     {
+        //         return true;
+        //     }
+        //     return false;
+        // });
 
         /////////////////////////////////////////////////////////////////////////////////////////
 
