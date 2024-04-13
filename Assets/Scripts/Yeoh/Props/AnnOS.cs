@@ -32,6 +32,11 @@ public class AnnOS : MonoBehaviour
     public GameObject shamanBtn;
     public GameObject priestBtn;
 
+    void Update()
+    {
+        CheckExorcistManager();
+    }
+
     void OnClick(GameObject target)
     {
         if(!LevelManager.Current.annOSView)
@@ -72,14 +77,20 @@ public class AnnOS : MonoBehaviour
                 else if(target==hunterBtn)
                 {
                     SwitchScreen("Camera Screen");
+
+                    EventManager.Current.OnReport(ExorcistType.Hunter);
                 }
                 else if(target==shamanBtn)
                 {
                     SwitchScreen("Camera Screen");
+
+                    EventManager.Current.OnReport(ExorcistType.Shaman);
                 }
                 else if(target==priestBtn)
                 {
                     SwitchScreen("Camera Screen");
+
+                    EventManager.Current.OnReport(ExorcistType.Priest);
                 }
             }
             
@@ -137,5 +148,14 @@ public class AnnOS : MonoBehaviour
             reportScreen.SetActive(true);
             camScreen.SetActive(false);
         }
+    }
+
+    void CheckExorcistManager()
+    {
+        reportBtn.SetActive(!ExorcistManager.Current.busy);
+
+        hunterBtn.SetActive(!ExorcistManager.Current.busy && ExorcistManager.Current.hunterAlive);
+        shamanBtn.SetActive(!ExorcistManager.Current.busy && ExorcistManager.Current.shamanAlive);
+        priestBtn.SetActive(!ExorcistManager.Current.busy && ExorcistManager.Current.priestAlive);
     }
 }

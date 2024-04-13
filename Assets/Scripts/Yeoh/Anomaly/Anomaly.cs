@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CreatureType
+{
+    Monster,
+    Anthropoid,
+    Ghost,
+}
+
 public enum AnomalyType
 {
     Passive,
@@ -10,6 +17,8 @@ public enum AnomalyType
 
 public class Anomaly : MonoBehaviour
 {
+    public CreatureType creatureType;
+
     [HideInInspector] public AnomalyMove move;
     [HideInInspector] public AnomalyStun stun;
     [HideInInspector] public AnomalyExposure exposure;
@@ -34,6 +43,6 @@ public class Anomaly : MonoBehaviour
     {
         if(anomaly!=gameObject) return;
 
-        Destroy(gameObject, .2f);
+        Destroy(gameObject, .1f);
     }    
 }

@@ -18,4 +18,8 @@ public class SFXManager : MonoBehaviour
 
     [Header("Toyol")]
     public AudioClip[] sfxToyolTrollLoop;
+    
+    [Header("Screams")]
+    public AudioClip[] sfxExorciseSuccessScream;
+    public AudioClip[] sfxExorciseFailScream;
 }

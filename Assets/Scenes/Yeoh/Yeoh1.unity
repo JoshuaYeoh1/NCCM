@@ -1248,6 +1248,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1427219314}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &454452812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 454452813}
+  - component: {fileID: 454452814}
+  m_Layer: 0
+  m_Name: Exorcist Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &454452813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454452812}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1216372283}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &454452814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454452812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c610f99c016ba459b963bfa061546c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hunterAlive: 1
+  shamanAlive: 1
+  priestAlive: 1
+  exorciseDelay: {x: 5, y: 10}
+  busy: 0
+  cooldownTime: 30
 --- !u!4 &460273965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3689966917057594120, guid: 1d399ca868d3b2c44832a3b3a84cf93e,
@@ -2882,6 +2932,7 @@ Transform:
   - {fileID: 7073611001248754229}
   - {fileID: 1249415075}
   - {fileID: 2006861189}
+  - {fileID: 454452813}
   - {fileID: 1953898896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4445,7 +4496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anomalies: []
   maxActiveAnomalies: 1
-  spawnTime: {x: 10, y: 15}
+  spawnTime: {x: 10, y: 20}
 --- !u!4 &2006861189
 Transform:
   m_ObjectHideFlags: 0
@@ -5900,6 +5951,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvases Group
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399765987599858326, guid: de1305963819b5543a6a878dc6803ba2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399765987599858326, guid: de1305963819b5543a6a878dc6803ba2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8770044163318380389, guid: de1305963819b5543a6a878dc6803ba2,
         type: 3}

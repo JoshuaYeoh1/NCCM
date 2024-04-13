@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b432ecd0897bc844eae3ad34b1bdce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureType: 1
   move: {fileID: 0}
   stun: {fileID: 0}
   exposure: {fileID: 0}
@@ -100,10 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  exposeSpeed: 1
   maxExposure: {x: 8, y: 12}
   currentExposure: 0
   damage: 1
+  attackedShutter: 0
   canJumpscare: 0
 --- !u!114 &7557427470317703323
 MonoBehaviour:

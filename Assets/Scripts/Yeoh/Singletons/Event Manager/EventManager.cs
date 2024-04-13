@@ -168,6 +168,29 @@ public class EventManager : MonoBehaviour
 
         Debug.Log($"{anomaly.name} disappeared");
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    public event Action<ExorcistType> ReportEvent;
+    public event Action<ExorcistType, GameObject> ExorciseSuccessEvent;
+    public event Action<ExorcistType> ExorcistDeathEvent;
+    
+    public void OnReport(ExorcistType exorcistType)
+    {
+        ReportEvent?.Invoke(exorcistType);
+    }
+    public void OnExorciseSuccess(ExorcistType exorcistType, GameObject anomaly)
+    {
+        ExorciseSuccessEvent?.Invoke(exorcistType, anomaly);
+
+        Debug.Log($"{exorcistType} removed {anomaly.name}");
+    }
+    public void OnExorcistDeath(ExorcistType exorcistType)
+    {
+        ExorcistDeathEvent?.Invoke(exorcistType);
+
+        Debug.Log($"Wrong call! {exorcistType} was killed.");
+    }
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
