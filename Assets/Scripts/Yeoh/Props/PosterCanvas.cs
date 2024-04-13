@@ -6,7 +6,7 @@ public class PosterCanvas : MonoBehaviour
 {
     public void ClosePoster()
     {
-        Singleton.Current.ViewCooldown();
+        LevelManager.Current.ViewCooldown();
         
         EventManager.Current.OnToggleFirstPerson(true);
 

@@ -15,7 +15,7 @@ public class LightsToggle : MonoBehaviour
 
     void Start()
     {
-        OnToggleLights(Singleton.Current.lightsOn);
+        OnToggleLights(LevelManager.Current.lightsOn);
     }
 
     public List<GameObject> lights = new List<GameObject>();
@@ -23,7 +23,7 @@ public class LightsToggle : MonoBehaviour
 
     void OnToggleLights(bool toggle)
     {
-        Singleton.Current.lightsOn = toggle;
+        LevelManager.Current.lightsOn = toggle;
 
         foreach(GameObject light in lights)
         {

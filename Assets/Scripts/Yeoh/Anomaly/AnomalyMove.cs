@@ -18,15 +18,17 @@ public class AnomalyMove : MonoBehaviour
     {
         EventManager.Current.AnomalySpawnEvent += OnAnomalySpawn;
         EventManager.Current.AnomalyTeleportEvent += OnAnomalyTeleport;
+        EventManager.Current.AnomalyTeleportRandomEvent += OnAnomalyTeleportRandom;
         EventManager.Current.AnomalyExpelEvent += OnAnomalyExpel;
-        EventManager.Current.AnomalyDespawnEvent += OnAnomalyDisappear;
+        EventManager.Current.AnomalyDespawnEvent += OnAnomalyDespawn;
     }
     void OnDisable()
     {
         EventManager.Current.AnomalySpawnEvent -= OnAnomalySpawn;
         EventManager.Current.AnomalyTeleportEvent -= OnAnomalyTeleport;
+        EventManager.Current.AnomalyTeleportRandomEvent -= OnAnomalyTeleportRandom;
         EventManager.Current.AnomalyExpelEvent -= OnAnomalyExpel;
-        EventManager.Current.AnomalyDespawnEvent -= OnAnomalyDisappear;
+        EventManager.Current.AnomalyDespawnEvent -= OnAnomalyDespawn;
     }
 
     void OnAnomalySpawn(GameObject spawned, Room room, Transform spot)
@@ -62,9 +64,7 @@ public class AnomalyMove : MonoBehaviour
             {
                 currentMoveCycle--;
 
-                Room room = RoomManager.Current.GetRandomRoom(currentRoom);
-
-                Teleport(room);
+                EventManager.Current.OnAnomalyTeleportRandom(gameObject);
             }
             else
             {
@@ -82,7 +82,14 @@ public class AnomalyMove : MonoBehaviour
     {
         Transform newSpot = RoomManager.Current.GetRandomSpot(newRoom, currentSpot);
 
-        if(!newSpot) return;
+        if(!newSpot)
+        {
+            Debug.LogWarning($"No space in {newRoom.name}, despawning anomaly.");
+            
+            EventManager.Current.OnAnomalyDespawn(gameObject);
+
+            return;
+        }
 
         EventManager.Current.OnAnomalyTeleport(gameObject, newRoom, newSpot);
     }
@@ -105,16 +112,25 @@ public class AnomalyMove : MonoBehaviour
         billboard.faceCamera = newRoom.roomCam.transform;
     }
 
-    void OnAnomalyExpel(GameObject victim)
+    void OnAnomalyTeleportRandom(GameObject teleportee)
     {
-        if(victim!=gameObject) return;
+        if(teleportee!=gameObject) return;
 
         Room room = RoomManager.Current.GetRandomRoom(currentRoom);
+
+        if(room==null) return;
 
         Teleport(room);
     }
 
-    void OnAnomalyDisappear(GameObject anomaly)
+    void OnAnomalyExpel(GameObject victim)
+    {
+        if(victim!=gameObject) return;
+
+        EventManager.Current.OnAnomalyTeleportRandom(victim);
+    }
+
+    void OnAnomalyDespawn(GameObject anomaly)
     {
         if(anomaly!=gameObject) return;
 

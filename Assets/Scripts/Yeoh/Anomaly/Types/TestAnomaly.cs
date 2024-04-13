@@ -17,6 +17,8 @@ public class TestAnomaly : MonoBehaviour
     {
         if(predator!=gameObject) return;
 
-        EventManager.Current.OnAnomalyDespawn(predator);
+        EventManager.Current.OnAnomalyTeleportRandom(predator);
+
+        //EventManager.Current.OnAnomalyDespawn(predator);
     }
 }

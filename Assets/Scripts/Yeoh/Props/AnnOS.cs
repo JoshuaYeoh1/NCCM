@@ -8,10 +8,12 @@ public class AnnOS : MonoBehaviour
     void OnEnable()
     {
         EventManager.Current.ClickEvent += OnClick;
+        EventManager.Current.ChangeCameraEvent += OnChangeCamera;
     }
     void OnDisable()
     {
         EventManager.Current.ClickEvent -= OnClick;
+        EventManager.Current.ChangeCameraEvent -= OnChangeCamera;
     }
     
     public GameObject backBtn;
@@ -20,6 +22,7 @@ public class AnnOS : MonoBehaviour
     public GameObject camScreen;
     public GameObject[] camBtns;
     public GameObject[] camViews;
+    public int currentCam=1;
     public GameObject reportBtn;
 
     [Header("Report Screen")]
@@ -31,7 +34,7 @@ public class AnnOS : MonoBehaviour
 
     void OnClick(GameObject target)
     {
-        if(!Singleton.Current.annOSView)
+        if(!LevelManager.Current.annOSView)
         {
             if(target==gameObject)
             {
@@ -51,7 +54,7 @@ public class AnnOS : MonoBehaviour
                 {
                     if(target==camBtns[i])
                     {
-                        SwitchCamView(i);
+                        EventManager.Current.OnChangeCamera(i);
                     }
                 }
 
@@ -87,9 +90,9 @@ public class AnnOS : MonoBehaviour
 
     void ToggleAnnOSView(bool toggle)
     {
-        if(Singleton.Current.annOSView!=toggle)
+        if(LevelManager.Current.annOSView!=toggle)
         {
-            Singleton.Current.annOSView=toggle;
+            LevelManager.Current.annOSView=toggle;
 
             EventManager.Current.OnToggleFirstPerson(!toggle);
 
@@ -104,19 +107,19 @@ public class AnnOS : MonoBehaviour
         }
     }
 
-    int currentCam=1;
-
-    void SwitchCamView(int num)
+    void OnChangeCamera(int index)
     {
+        if(!camScreen.activeSelf) return;
+
+        if(currentCam==index+1) return;
+
         for(int i=0; i<camViews.Length; i++)
         {
-            if(i==num)
+            if(i==index)
             {
                 camViews[i].SetActive(true);
 
-                currentCam=num+1;
-
-                EventManager.Current.OnChangeCamera(num+1);
+                currentCam = index+1;
             }
             else camViews[i].SetActive(false);
         }

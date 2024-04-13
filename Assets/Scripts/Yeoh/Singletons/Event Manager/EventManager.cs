@@ -50,9 +50,11 @@ public class EventManager : MonoBehaviour
     {
         ToggleFirstPersonEvent?.Invoke(toggle);
     }
-    public void OnChangeCamera(int camNumber)
+    public void OnChangeCamera(int index)
     {
-        ChangeCameraEvent?.Invoke(camNumber);
+        ChangeCameraEvent?.Invoke(index);
+
+        Debug.Log($"Current Camera is {index+1}");
     }
     public void OnClockIn()
     {
@@ -67,24 +69,24 @@ public class EventManager : MonoBehaviour
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public event Action<float> ActivateSoundPitchEvent;
-    public event Action<float> ActivateFlashEvent;
-    public event Action<float> ActivateCageEvent;
+    public event Action<bool> ToggleSoundPitchEvent;
+    public event Action<bool> ToggleFlashEvent;
+    public event Action<bool> ToggleCageEvent;
     public event Action<bool> ToggleLightsEvent;
     public event Action<bool> ShutterActivateEvent;
     public event Action ShutterBreakEvent;
     
-    public void OnActivateSoundPitch(float activeTime)
+    public void OnToggleSoundPitch(bool toggle)
     {
-        ActivateSoundPitchEvent?.Invoke(activeTime);
+        ToggleSoundPitchEvent?.Invoke(toggle);
     }
-    public void OnActivateFlash(float activeTime)
+    public void OnToggleFlash(bool toggle)
     {
-        ActivateFlashEvent?.Invoke(activeTime);
+        ToggleFlashEvent?.Invoke(toggle);
     }
-    public void OnActivateCage(float activeTime)
+    public void OnToggleCage(bool toggle)
     {
-        ActivateCageEvent?.Invoke(activeTime);
+        ToggleCageEvent?.Invoke(toggle);
     }
     public void OnToggleLights(bool toggle)
     {
@@ -99,15 +101,16 @@ public class EventManager : MonoBehaviour
         ShutterBreakEvent?.Invoke();
     }
     
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public event Action<GameObject, Room, Transform> AnomalySpawnEvent;
     public event Action<GameObject, Room, Transform> AnomalyTeleportEvent;
+    public event Action<GameObject> AnomalyTeleportRandomEvent;
     public event Action<GameObject> AnomalyReachedWindowEvent;
-    public event Action<GameObject> AnomalyAttackEvent;
+    public event Action<GameObject, float> AnomalyAttackEvent;
     public event Action<GameObject> AnomalyJumpscareEvent;
     public event Action<GameObject> AnomalyStunEvent;
+    public event Action<GameObject> AnomalyRecoverEvent;
     public event Action<GameObject> AnomalyExpelEvent;
     public event Action<GameObject> AnomalyDespawnEvent;
 
@@ -123,15 +126,19 @@ public class EventManager : MonoBehaviour
 
         Debug.Log($"{teleportee.name} teleported to {newRoom.name}");
     }
+    public void OnAnomalyTeleportRandom(GameObject teleportee)
+    {
+        AnomalyTeleportRandomEvent?.Invoke(teleportee);
+    }
     public void OnAnomalyReachedWindow(GameObject anomaly)
     {
         AnomalyReachedWindowEvent?.Invoke(anomaly);
 
         Debug.Log($"{anomaly.name} reached Player Window");
     }
-    public void OnAnomalyAttack(GameObject attacker)
+    public void OnAnomalyAttack(GameObject attacker, float dmg)
     {
-        AnomalyAttackEvent?.Invoke(attacker);
+        AnomalyAttackEvent?.Invoke(attacker, dmg);
 
         Debug.Log($"{attacker.name} attacked");
     }
@@ -144,6 +151,10 @@ public class EventManager : MonoBehaviour
     public void OnAnomalyStun(GameObject victim)
     {
         AnomalyStunEvent?.Invoke(victim);
+    }
+    public void OnAnomalyRecover(GameObject subject)
+    {
+        AnomalyRecoverEvent?.Invoke(subject);
     }
     public void OnAnomalyExpel(GameObject victim)
     {
@@ -158,4 +169,12 @@ public class EventManager : MonoBehaviour
         Debug.Log($"{anomaly.name} disappeared");
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public event Action<GameObject, float, float> UIBarUpdateEvent;
+
+    public void OnUIBarUpdate(GameObject owner, float value, float valueMax)
+    {
+        UIBarUpdateEvent?.Invoke(owner, value, valueMax);
+    }
 }

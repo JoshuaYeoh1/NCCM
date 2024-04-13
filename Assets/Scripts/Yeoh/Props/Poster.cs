@@ -17,7 +17,7 @@ public class Poster : MonoBehaviour
     {
         if(target!=gameObject) return;
 
-        if(Singleton.Current.canView)
+        if(LevelManager.Current.canView)
         {
             ShowPoster();
         }

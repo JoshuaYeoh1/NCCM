@@ -9,27 +9,37 @@ public class Shutter : MonoBehaviour
 
     public float animTime=.5f;
 
+    public float shutterHp=3;
+    float shutterHpMax;
+
+    void Awake()
+    {
+        shutterHpMax=shutterHp;
+    }
+
     void OnEnable()
     {
         EventManager.Current.ShutterActivateEvent += OnShutterActivate;
+        EventManager.Current.AnomalyAttackEvent += OnAnomalyAttack;
         EventManager.Current.ShutterBreakEvent += OnShutterBreak;
     }
     void OnDisable()
     {
         EventManager.Current.ShutterActivateEvent -= OnShutterActivate;
+        EventManager.Current.AnomalyAttackEvent -= OnAnomalyAttack;
         EventManager.Current.ShutterBreakEvent -= OnShutterBreak;
     }
-
+    
     void Start()
     {
-        OnShutterActivate(Singleton.Current.shutterClosed);
+        OnShutterActivate(LevelManager.Current.shutterClosed);
     }
     
     void OnShutterActivate(bool toggle)
     {
-        if(Singleton.Current.shutterHp<=0) return;
+        if(shutterHp<=0) return;
 
-        Singleton.Current.shutterClosed = toggle;
+        LevelManager.Current.shutterClosed = toggle;
 
         LeanTween.cancel(gameObject);
 
@@ -41,13 +51,6 @@ public class Shutter : MonoBehaviour
         {
             LeanTween.move(gameObject, openPos, animTime).setEaseInOutSine();
         }
-    }
-
-    void OnShutterBreak()
-    {
-        Singleton.Current.shutterClosed = false;
-
-        Destroy(gameObject);
     }
 
     [ContextMenu("Record Open Position")]
@@ -71,6 +74,31 @@ public class Shutter : MonoBehaviour
     {
         transform.position = closePos;
     }
-    
-    
+
+    public void OnAnomalyAttack(GameObject attacker, float dmg)
+    {
+        if(dmg<=0) return;
+
+        shutterHp-=dmg;
+
+        if(shutterHp<=0)
+        {
+            shutterHp=0;
+
+            EventManager.Current.OnShutterBreak();
+        }
+
+        ModelManager.Current.FlashColor(gameObject, .5f, -.5f, -.5f);
+
+        CameraManager.Current.Shake();
+
+        EventManager.Current.OnUIBarUpdate(LevelManager.Current.gameObject, shutterHp, shutterHpMax);
+    }
+
+    void OnShutterBreak()
+    {
+        LevelManager.Current.shutterClosed = false;
+
+        Destroy(gameObject);
+    }
 }

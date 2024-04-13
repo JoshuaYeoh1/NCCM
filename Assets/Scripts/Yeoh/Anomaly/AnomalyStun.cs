@@ -11,12 +11,12 @@ public class AnomalyStun : MonoBehaviour
     public bool immuneToLight;
     public bool immuneToDark;
 
-    bool isSoundStunned;
-    bool isFlashStunned;
-    bool isCageStunned;
-    bool isDoorStunned;
-    bool isLightStunned;
-    bool isDarkStunned;
+    [HideInInspector] public bool isSoundStunned;
+    [HideInInspector] public bool isFlashStunned;
+    [HideInInspector] public bool isCageStunned;
+    [HideInInspector] public bool isDoorStunned;
+    [HideInInspector] public bool isLightStunned;
+    [HideInInspector] public bool isDarkStunned;
 
     [HideInInspector] public int stunCombo;
 
@@ -24,12 +24,12 @@ public class AnomalyStun : MonoBehaviour
 
     public void CheckAll()
     {
-        CheckStun(immuneToSound, Singleton.Current.soundPitchActive, ref isSoundStunned);
-        CheckStun(immuneToFlash, Singleton.Current.flashActive, ref isFlashStunned);
-        CheckStun(immuneToCage, Singleton.Current.cageActive, ref isCageStunned);
-        CheckStun(immuneToDoorLock, Singleton.Current.doorLocked, ref isDoorStunned);
-        CheckStun(immuneToLight, Singleton.Current.lightsOn, ref isLightStunned);
-        CheckStun(immuneToDark, !Singleton.Current.lightsOn, ref isDarkStunned);
+        CheckStun(immuneToSound, LevelManager.Current.soundPitchActive, ref isSoundStunned);
+        CheckStun(immuneToFlash, LevelManager.Current.flashActive, ref isFlashStunned);
+        CheckStun(immuneToCage, LevelManager.Current.cageActive, ref isCageStunned);
+        CheckStun(immuneToDoorLock, LevelManager.Current.doorLocked, ref isDoorStunned);
+        CheckStun(immuneToLight, LevelManager.Current.lightsOn, ref isLightStunned);
+        CheckStun(immuneToDark, !LevelManager.Current.lightsOn, ref isDarkStunned);
     }
 
     void CheckStun(bool isImmune, bool isDefenseActive, ref bool isStunned)
@@ -52,6 +52,8 @@ public class AnomalyStun : MonoBehaviour
             {
                 isStunned=false;
                 stunCombo--;
+
+                EventManager.Current.OnAnomalyRecover(gameObject);
             }
         }
     }
@@ -75,5 +77,7 @@ public class AnomalyStun : MonoBehaviour
         isDoorStunned=false;
         isLightStunned=false;
         isDarkStunned=false;
+
+        EventManager.Current.OnAnomalyRecover(gameObject);
     }
 }

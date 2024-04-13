@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfa233c07461a146a0c5081da0df70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxTest: []
+  sfxSoundPitchLoop:
+  - {fileID: 8300000, guid: ae29ebeecf0492d49adbaeff21049436, type: 3}

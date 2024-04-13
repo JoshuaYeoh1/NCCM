@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Level1 : MonoBehaviour
 {
+    public AnomalySpawner spawner;
+
     public GameObject pocong;
     public GameObject ponna;
     public GameObject toyol;
@@ -23,27 +25,33 @@ public class Level1 : MonoBehaviour
     {
         if(hour==10)
         {
-            AnomalySpawner.Current.maxActiveAnomalies=1;
+            spawner.maxActiveAnomalies=1;
 
-            AnomalySpawner.Current.anomalies.Add(pocong);
-            AnomalySpawner.Current.anomalies.Add(ponna);
+            spawner.anomalies.Add(pocong);
+            spawner.anomalies.Add(ponna);
         }
         else if(hour==12)
         {
-            AnomalySpawner.Current.anomalies.Add(toyol);
+            spawner.anomalies.Add(toyol);
         }
         else if(hour==1)
         {
-            AnomalySpawner.Current.maxActiveAnomalies=2;
+            spawner.maxActiveAnomalies=2;
         }
         else if(hour==3)
         {
-            AnomalySpawner.Current.anomalies.Add(minyak);
-            AnomalySpawner.Current.anomalies.Remove(ponna);
+            spawner.anomalies.Add(minyak);
+            spawner.anomalies.Remove(ponna);
         }
         else if(hour==4)
         {
-            AnomalySpawner.Current.anomalies.Add(pretas);
+            spawner.anomalies.Add(pretas);
+        }
+        else if(hour==6)
+        {
+            spawner.anomalies.Clear();
+
+            spawner.maxActiveAnomalies=0;
         }
     }
 }

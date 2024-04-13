@@ -53,25 +53,25 @@ public class DefenseButton : MonoBehaviour
 
         if(buttonType==ButtonType.SoundPitch)
         {
-            EventManager.Current.OnActivateSoundPitch(activeTime);
+            EventManager.Current.OnToggleSoundPitch(true);
 
-            Singleton.Current.soundPitchActive=true;
+            LevelManager.Current.soundPitchActive=true;
 
             Invoke(nameof(DisableSoundPitch), activeTime);
         }
         else if(buttonType==ButtonType.Flash)
         {
-            EventManager.Current.OnActivateFlash(activeTime);
+            EventManager.Current.OnToggleFlash(true);
 
-            Singleton.Current.flashActive=true;
+            LevelManager.Current.flashActive=true;
 
             Invoke(nameof(DisableFlash), activeTime);
         }
         else if(buttonType==ButtonType.Cage)
         {
-            EventManager.Current.OnActivateCage(activeTime);
+            EventManager.Current.OnToggleCage(true);
 
-            Singleton.Current.cageActive=true;
+            LevelManager.Current.cageActive=true;
 
             Invoke(nameof(DisableCage), activeTime);
         }
@@ -81,15 +81,21 @@ public class DefenseButton : MonoBehaviour
 
     void DisableSoundPitch()
     {
-        Singleton.Current.soundPitchActive=false;
+        LevelManager.Current.soundPitchActive=false;
+
+        EventManager.Current.OnToggleSoundPitch(false);
     }
     void DisableFlash()
     {
-        Singleton.Current.flashActive=false;
+        LevelManager.Current.flashActive=false;
+
+        EventManager.Current.OnToggleFlash(false);
     }
     void DisableCage()
     {
-        Singleton.Current.cageActive=false;
+        LevelManager.Current.cageActive=false;
+
+        EventManager.Current.OnToggleCage(false);
     }
 
     void Cooldown()

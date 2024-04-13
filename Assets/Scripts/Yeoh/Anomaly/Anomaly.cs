@@ -23,28 +23,17 @@ public class Anomaly : MonoBehaviour
 
     void OnEnable()
     {
-        EventManager.Current.AnomalySpawnEvent += OnAnomalySpawn;
         EventManager.Current.AnomalyDespawnEvent += OnAnomalyDespawn;
     }
     void OnDisable()
     {
-        EventManager.Current.AnomalySpawnEvent -= OnAnomalySpawn;
         EventManager.Current.AnomalyDespawnEvent -= OnAnomalyDespawn;
-    }
-
-    void OnAnomalySpawn(GameObject spawned, Room room, Transform spot)
-    {
-        if(spawned!=gameObject) return;
-
-        AnomalySpawner.Current.activeAnomalies.Add(gameObject);
     }
 
     void OnAnomalyDespawn(GameObject anomaly)
     {
         if(anomaly!=gameObject) return;
 
-        AnomalySpawner.Current.activeAnomalies.Remove(gameObject);
-
-        Destroy(gameObject, .1f);
+        Destroy(gameObject, .2f);
     }    
 }

@@ -168,7 +168,7 @@ public class CameraManager : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public void Shake(float time=.1f, float amp=1.5f, float freq=2)
+    public void Shake(float time=.2f, float amp=1, float freq=2)
     {
         //if(haptics) Vibrator.Vibrate();
 

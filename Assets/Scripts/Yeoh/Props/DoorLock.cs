@@ -15,9 +15,9 @@ public class DoorLock : MonoBehaviour
 
     void Start()
     {
-        ToggleLockIcon(Singleton.Current.doorLocked);
+        ToggleLockIcon(LevelManager.Current.doorLocked);
 
-        if(Singleton.Current.doorLocked)
+        if(LevelManager.Current.doorLocked)
         {
             LockDoor(doorLockTime);
         }
@@ -30,7 +30,7 @@ public class DoorLock : MonoBehaviour
     {
         if(target!=gameObject) return;
         
-        if(Singleton.Current.doorLocked)
+        if(LevelManager.Current.doorLocked)
         {
             UnlockDoor();
         }
@@ -39,7 +39,7 @@ public class DoorLock : MonoBehaviour
 
     public void LockDoor(float time)
     {
-        Singleton.Current.doorLocked=true;
+        LevelManager.Current.doorLocked=true;
 
         ToggleLockIcon(true);
 
@@ -51,7 +51,7 @@ public class DoorLock : MonoBehaviour
     {
         CancelInvoke(nameof(UnlockDoor));
 
-        Singleton.Current.doorLocked=false;
+        LevelManager.Current.doorLocked=false;
 
         ToggleLockIcon(false);
     }

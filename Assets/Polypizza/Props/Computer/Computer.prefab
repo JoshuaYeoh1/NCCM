@@ -698,9 +698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2867499438028473309}
-  - component: {fileID: 2497082294742299363}
   - component: {fileID: 9186221800682008382}
-  - component: {fileID: 937844344324849952}
   m_Layer: 7
   m_Name: Click Trigger
   m_TagString: Untagged
@@ -723,33 +721,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 273103534132958393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2497082294742299363
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2908194348106803483}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &9186221800682008382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -771,37 +742,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.117354, y: 0.4954993, z: 0.667768}
   m_Center: {x: 0.14523725, y: 0.25225034, z: 0.20303088}
---- !u!114 &937844344324849952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2908194348106803483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2098048f0a830e5418bad58534507970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backBtn: {fileID: 3293598581094894443}
-  camScreen: {fileID: 2096391847407799820}
-  camBtns:
-  - {fileID: 5754712786428670867}
-  - {fileID: 8138121422692786899}
-  - {fileID: 2164829472181253221}
-  - {fileID: 6167371059241233089}
-  camViews:
-  - {fileID: 8016027530218377001}
-  - {fileID: 4293339894969304595}
-  - {fileID: 2311207022576055720}
-  - {fileID: 4397517618973100910}
-  reportBtn: {fileID: 448328036660855261}
-  reportScreen: {fileID: 3375165907296743546}
-  reportBackBtn: {fileID: 347890345923592240}
-  hunterBtn: {fileID: 5585697229484496400}
-  shamanBtn: {fileID: 255346538929037570}
-  priestBtn: {fileID: 4519404662370552042}
-  annOSCam: {fileID: 6375193040393040400}
 --- !u!1 &3293598581094894443
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,6 +920,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 273103534132958393}
+  - component: {fileID: 482814594655323831}
+  - component: {fileID: 4527529013538314200}
   m_Layer: 3
   m_Name: Computer
   m_TagString: Untagged
@@ -1001,11 +943,69 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2867499438028473309}
-  - {fileID: 2099347748959935446}
-  - {fileID: 2336660780632195861}
   - {fileID: 6248816068154935644}
+  - {fileID: 2336660780632195861}
+  - {fileID: 2099347748959935446}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &482814594655323831
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3927877691519443203}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4527529013538314200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3927877691519443203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2098048f0a830e5418bad58534507970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backBtn: {fileID: 3293598581094894443}
+  camScreen: {fileID: 2096391847407799820}
+  camBtns:
+  - {fileID: 5754712786428670867}
+  - {fileID: 8138121422692786899}
+  - {fileID: 2164829472181253221}
+  - {fileID: 6167371059241233089}
+  camViews:
+  - {fileID: 8016027530218377001}
+  - {fileID: 4293339894969304595}
+  - {fileID: 2311207022576055720}
+  - {fileID: 4397517618973100910}
+  reportBtn: {fileID: 448328036660855261}
+  reportScreen: {fileID: 3375165907296743546}
+  reportBackBtn: {fileID: 347890345923592240}
+  hunterBtn: {fileID: 5585697229484496400}
+  shamanBtn: {fileID: 255346538929037570}
+  priestBtn: {fileID: 4519404662370552042}
+  annOSCam: {fileID: 6375193040393040400}
 --- !u!1 &4293339894969304595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6248816068154935644}
   m_Layer: 3
-  m_Name: AnnOS View
+  m_Name: AnnOS Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1436,6 +1436,7 @@ GameObject:
   - component: {fileID: 6338442900332186559}
   - component: {fileID: 1287821258331158514}
   - component: {fileID: 2266334406276348672}
+  - component: {fileID: 641636056584083916}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1519,6 +1520,23 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &641636056584083916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217788883140251307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 891.38367, y: 991.0691, z: -600.84985}
 --- !u!1 &5585697229484496400
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,6 @@ public class SFXManager : MonoBehaviour
 
     ////////////////////////////////////////////////////////////////////////////////////
 
-    [Header("Category")]
-    public AudioClip[] sfxTest;
+    [Header("Sound Pitch")]
+    public AudioClip[] sfxSoundPitchLoop;
 }
