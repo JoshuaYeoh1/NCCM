@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1729942608250812945}
   - component: {fileID: 7118843143657515237}
   - component: {fileID: 2492020044775068662}
+  - component: {fileID: 7418194373197018940}
   m_Layer: 7
   m_Name: Shaman Btn
   m_TagString: Untagged
@@ -134,6 +135,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.12, y: 5.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7418194373197018940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255346538929037570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &347890345923592240
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +175,7 @@ GameObject:
   - component: {fileID: 2412828510130688864}
   - component: {fileID: 8743584772765092269}
   - component: {fileID: 4442134148622067966}
+  - component: {fileID: 3393200027475557881}
   m_Layer: 7
   m_Name: X Btn
   m_TagString: Untagged
@@ -268,6 +298,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.56, y: 2.56, z: 0.2}
   m_Center: {x: 0.0000076293945, y: 0.0000038146973, z: 0}
+--- !u!114 &3393200027475557881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347890345923592240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &448328036660855261
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +338,7 @@ GameObject:
   - component: {fileID: 769512827627628919}
   - component: {fileID: 9120739510734713935}
   - component: {fileID: 477786954898387782}
+  - component: {fileID: 3550159545894181409}
   m_Layer: 7
   m_Name: Report Btn
   m_TagString: Untagged
@@ -402,6 +461,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.93, y: 1.55, z: 0.2}
   m_Center: {x: 0, y: -0.0000038146973, z: -0.0000076293945}
+--- !u!114 &3550159545894181409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448328036660855261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 1
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &728083239254081193
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1720265098111040145}
+  - component: {fileID: 5149139941092571976}
   m_Layer: 3
   m_Name: Camera Screen
   m_TagString: Untagged
@@ -472,6 +560,28 @@ Transform:
   - {fileID: 5961393137555004013}
   m_Father: {fileID: 6248816068154935644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5149139941092571976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096391847407799820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d211afd43e68df4e8c90563b5caa52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animsList:
+  - {fileID: 1020172673031738545}
+  - {fileID: 88477501346700565}
+  - {fileID: 631115489507298569}
+  - {fileID: 8580219925516083597}
+  - {fileID: 7649214963602246707}
+  animTime: 0.5
+  nextAnimOffsetTime: -0.4
+  playOnEnable: 1
+  playOnEnableDelay: 0
 --- !u!1 &2164829472181253221
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +594,7 @@ GameObject:
   - component: {fileID: 2673667493980931441}
   - component: {fileID: 8203136593684624851}
   - component: {fileID: 7336012997768336561}
+  - component: {fileID: 8580219925516083597}
   m_Layer: 7
   m_Name: Cam3
   m_TagString: Untagged
@@ -606,6 +717,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.56, y: 2.56, z: 0.2}
   m_Center: {x: 0.0000076293945, y: 0, z: 0}
+--- !u!114 &8580219925516083597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164829472181253221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &2311207022576055720
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +756,7 @@ GameObject:
   - component: {fileID: 118697696211716864}
   - component: {fileID: 4216621179706488210}
   - component: {fileID: 8959304236790612093}
+  - component: {fileID: 3118484987685113205}
   m_Layer: 3
   m_Name: Cam Render 3
   m_TagString: Untagged
@@ -635,7 +775,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000008940697}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.66342705, y: 0.37317774, z: 0.04146419}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2724039566857443135}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -689,6 +829,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3118484987685113205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311207022576055720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0.66342705, y: 0, z: 0.04146419}
+  outScale: {x: 0.66342705, y: 0, z: 0.04146419}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 1
+  playOnEnableAnimTime: 0.15
+  playOnEnableDelay: 0
 --- !u!1 &2908194348106803483
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +1053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5297657725339896241}
+  - component: {fileID: 3330617515930520916}
   m_Layer: 3
   m_Name: Report Screen
   m_TagString: Untagged
@@ -911,6 +1080,28 @@ Transform:
   - {fileID: 1234689877151572743}
   m_Father: {fileID: 6248816068154935644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3330617515930520916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375165907296743546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d211afd43e68df4e8c90563b5caa52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animsList:
+  - {fileID: 8795153353941690339}
+  - {fileID: 6942347414064920033}
+  - {fileID: 7418194373197018940}
+  - {fileID: 625216973782373519}
+  - {fileID: 3393200027475557881}
+  animTime: 0.5
+  nextAnimOffsetTime: -0.4
+  playOnEnable: 1
+  playOnEnableDelay: 0
 --- !u!1 &3927877691519443203
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1190,7 @@ MonoBehaviour:
   - {fileID: 4293339894969304595}
   - {fileID: 2311207022576055720}
   - {fileID: 4397517618973100910}
+  currentCam: 1
   reportBtn: {fileID: 448328036660855261}
   reportScreen: {fileID: 3375165907296743546}
   reportBackBtn: {fileID: 347890345923592240}
@@ -1017,6 +1209,7 @@ GameObject:
   - component: {fileID: 3496036023395316877}
   - component: {fileID: 287075313082200843}
   - component: {fileID: 9172206492980345933}
+  - component: {fileID: 5393832363415656147}
   m_Layer: 3
   m_Name: Cam Render 2
   m_TagString: Untagged
@@ -1035,7 +1228,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000008940697}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.66342705, y: 0.37317774, z: 0.04146419}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2724039566857443135}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1089,6 +1282,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5393832363415656147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293339894969304595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0.66342705, y: 0, z: 0.04146419}
+  outScale: {x: 0.66342705, y: 0, z: 0.04146419}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 1
+  playOnEnableAnimTime: 0.15
+  playOnEnableDelay: 0
 --- !u!1 &4397517618973100910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1321,7 @@ GameObject:
   - component: {fileID: 7409268460708887463}
   - component: {fileID: 3709782235846755571}
   - component: {fileID: 3967073066355251562}
+  - component: {fileID: 8644158758976498548}
   m_Layer: 3
   m_Name: Cam Render 4
   m_TagString: Untagged
@@ -1118,7 +1340,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000008940697}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.66342705, y: 0.37317774, z: 0.04146419}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2724039566857443135}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1172,6 +1394,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8644158758976498548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397517618973100910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0.66342705, y: 0, z: 0.04146419}
+  outScale: {x: 0.66342705, y: 0, z: 0.04146419}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 1
+  playOnEnableAnimTime: 0.15
+  playOnEnableDelay: 0
 --- !u!1 &4519404662370552042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1434,7 @@ GameObject:
   - component: {fileID: 5721483848285706785}
   - component: {fileID: 7135101329121633350}
   - component: {fileID: 536059870378115073}
+  - component: {fileID: 625216973782373519}
   m_Layer: 7
   m_Name: Priest Btn
   m_TagString: Untagged
@@ -1306,6 +1557,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.12, y: 5.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &625216973782373519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519404662370552042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &4776869448174757438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,6 +1629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5168970492362102935}
   - component: {fileID: 2917935425854185924}
+  - component: {fileID: 8795153353941690339}
   m_Layer: 3
   m_Name: Occult Report Label
   m_TagString: Untagged
@@ -1424,6 +1704,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8795153353941690339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5149192262777111222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &5217788883140251307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1857,7 @@ GameObject:
   - component: {fileID: 1026827425003663316}
   - component: {fileID: 8126431865153827787}
   - component: {fileID: 5446555893017599315}
+  - component: {fileID: 6942347414064920033}
   m_Layer: 7
   m_Name: Hunter Btn
   m_TagString: Untagged
@@ -1671,6 +1980,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.12, y: 5.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6942347414064920033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585697229484496400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &5677215724527308913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +2054,7 @@ GameObject:
   - component: {fileID: 3743299753477805196}
   - component: {fileID: 7920992937395021240}
   - component: {fileID: 6369072580765187120}
+  - component: {fileID: 88477501346700565}
   m_Layer: 7
   m_Name: Cam1
   m_TagString: Untagged
@@ -1839,6 +2177,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.56, y: 2.56, z: 0.2}
   m_Center: {x: 0.0000076293945, y: 0.0000038146973, z: 0}
+--- !u!114 &88477501346700565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754712786428670867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &6167371059241233089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,6 +2217,7 @@ GameObject:
   - component: {fileID: 296241811632560955}
   - component: {fileID: 4768336657885743530}
   - component: {fileID: 5875455370508842318}
+  - component: {fileID: 7649214963602246707}
   m_Layer: 7
   m_Name: Cam4
   m_TagString: Untagged
@@ -1973,6 +2340,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.56, y: 2.56, z: 0.2}
   m_Center: {x: 0.0000076293945, y: 0, z: 0}
+--- !u!114 &7649214963602246707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167371059241233089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &6315450383698427954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292790920552260237}
   - component: {fileID: 5049241317886401023}
+  - component: {fileID: 8465995407064983172}
   m_Layer: 3
   m_Name: BG
   m_TagString: Untagged
@@ -2092,6 +2488,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8465995407064983172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6412094342939920009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0.03508595, y: 0, z: 0.034418236}
+  outScale: {x: 0.03508595, y: 0, z: 0.034418236}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 1
+  playOnEnableAnimTime: 0.15
+  playOnEnableDelay: 0
 --- !u!1 &7896888709481073688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,6 +2599,7 @@ GameObject:
   - component: {fileID: 2356157186296686396}
   - component: {fileID: 2783932679203112383}
   - component: {fileID: 2307943098059402878}
+  - component: {fileID: 900105222042159111}
   m_Layer: 3
   m_Name: Cam Render 1
   m_TagString: Untagged
@@ -2193,7 +2618,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000008940697}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.66342705, y: 0.37317774, z: 0.04146419}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2724039566857443135}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -2247,6 +2672,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &900105222042159111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016027530218377001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0.66342705, y: 0, z: 0.04146419}
+  outScale: {x: 0.66342705, y: 0, z: 0.04146419}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 1
+  playOnEnableAnimTime: 0.15
+  playOnEnableDelay: 0
 --- !u!1 &8138121422692786899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,6 +2712,7 @@ GameObject:
   - component: {fileID: 4332769242544452806}
   - component: {fileID: 694749551560904301}
   - component: {fileID: 8108339826270353742}
+  - component: {fileID: 631115489507298569}
   m_Layer: 7
   m_Name: Cam2
   m_TagString: Untagged
@@ -2381,6 +2835,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.56, y: 2.56, z: 0.2}
   m_Center: {x: 0.0000076293945, y: 0.0000038146973, z: 0}
+--- !u!114 &631115489507298569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138121422692786899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1 &8246584506071995496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7013806740504189851}
   - component: {fileID: 2807122173939608604}
+  - component: {fileID: 1020172673031738545}
   m_Layer: 3
   m_Name: Live
   m_TagString: Untagged
@@ -2465,6 +2948,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1020172673031738545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246584506071995496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76d7099fbdba040af825d9772629a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 0
+  inPos: {x: 0, y: 0, z: 0}
+  outPos: {x: 0, y: 0, z: 0}
+  animRot: 0
+  inRot: {x: 0, y: 0, z: 0}
+  outRot: {x: 0, y: 0, z: 0}
+  animScale: 1
+  inScale: {x: 0, y: 0, z: 0}
+  outScale: {x: 0, y: 0, z: 0}
+  img: {fileID: 0}
+  animAlpha: 0
+  inAlpha: 0
+  outAlpha: 0
+  playOnEnable: 0
+  playOnEnableAnimTime: 0.5
+  playOnEnableDelay: 0
 --- !u!1001 &1921023675553332285
 PrefabInstance:
   m_ObjectHideFlags: 0
