@@ -866,6 +866,37 @@ Transform:
   - {fileID: 1393733363}
   m_Father: {fileID: 1764600962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &311676538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311676539}
+  m_Layer: 0
+  m_Name: Toyol Spot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &311676539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311676538}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.847181, z: -0, w: -0.5313043}
+  m_LocalPosition: {x: -3.09, y: 0.618, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 549034183}
+  m_LocalEulerAnglesHint: {x: 0, y: -244.187, z: 0}
 --- !u!1 &370901292
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +932,37 @@ Transform:
   - {fileID: 272790843}
   m_Father: {fileID: 246739857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &384811533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 384811534}
+  m_Layer: 0
+  m_Name: Toyol Spot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &384811534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384811533}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.99769837, z: -0, w: 0.06780875}
+  m_LocalPosition: {x: 0.403, y: 0.618, z: 3.106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 549034183}
+  m_LocalEulerAnglesHint: {x: 0, y: -172.224, z: 0}
 --- !u!1 &400244660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1285,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1555846410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &549034182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 549034183}
+  m_Layer: 0
+  m_Name: Toyol Spots
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &549034183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549034182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 384811534}
+  - {fileID: 1425064076}
+  - {fileID: 311676539}
+  m_Father: {fileID: 1885512879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550927508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 550927509}
   m_Layer: 0
-  m_Name: Toyol Spot
+  m_Name: Toyol Hiding Spot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3481,6 +3577,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1427219314}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1425064075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425064076}
+  m_Layer: 0
+  m_Name: Toyol Spot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425064076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425064075}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9967841, z: -0, w: -0.08013436}
+  m_LocalPosition: {x: -0.908, y: 0.618, z: 3.263}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 549034183}
+  m_LocalEulerAnglesHint: {x: 0, y: -189.193, z: 0}
 --- !u!1 &1427219313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4277,6 +4404,7 @@ Transform:
   - {fileID: 1404766685}
   - {fileID: 2043145165}
   - {fileID: 1438148900}
+  - {fileID: 549034183}
   - {fileID: 550927509}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

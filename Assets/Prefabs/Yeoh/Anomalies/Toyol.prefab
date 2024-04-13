@@ -87,6 +87,9 @@ MonoBehaviour:
     roomCam: {fileID: 0}
     spawnpoints: []
   currentSpot: {fileID: 0}
+  roomUniques:
+  - name: Player Room
+    spots: []
 --- !u!114 &2848803891153716437
 MonoBehaviour:
   m_ObjectHideFlags: 0

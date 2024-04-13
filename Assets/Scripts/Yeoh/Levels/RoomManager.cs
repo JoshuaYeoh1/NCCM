@@ -40,18 +40,39 @@ public class RoomManager : MonoBehaviour
         return room;
     }
     
-    public Transform GetRandomSpot(Room room, Transform prevSpot=null, int retries=20)
+    public Transform GetRandomSpot(Room room)
     {
-        Transform newSpot=null;
+        Transform newSpot;
 
-        for(int i=0; i<retries; i++)
-        {
-            newSpot = room.spawnpoints[Random.Range(0, room.spawnpoints.Count)];
+        List<Transform> unoccupiedSpots = GetUnoccupiedSpots(room);
 
-            if(!occupiedSpots.Contains(newSpot)) break;
-        }
+        newSpot = GetRandomUnoccupiedSpot(unoccupiedSpots);
 
         return newSpot;
+    }
+
+    List<Transform> GetUnoccupiedSpots(Room room)
+    {
+        List<Transform> unoccupiedSpots = new();
+
+        foreach(Transform spot in room.spawnpoints)
+        {
+            if(!occupiedSpots.Contains(spot))
+            {
+                unoccupiedSpots.Add(spot);
+            }
+        }
+
+        return unoccupiedSpots;
+    }
+
+    Transform GetRandomUnoccupiedSpot(List<Transform> unoccupiedSpots)
+    {
+        if(unoccupiedSpots.Count>0)
+        {
+            return unoccupiedSpots[Random.Range(0, unoccupiedSpots.Count)];
+        }
+        return null;
     }
 
     public void OccupySpot(Transform spot)

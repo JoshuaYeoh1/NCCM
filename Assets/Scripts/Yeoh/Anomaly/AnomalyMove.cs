@@ -80,14 +80,12 @@ public class AnomalyMove : MonoBehaviour
 
     void Teleport(Room newRoom)
     {
-        Transform newSpot = RoomManager.Current.GetRandomSpot(newRoom, currentSpot);
-
+        Transform newSpot = RoomManager.Current.GetRandomSpot(newRoom);
+        
         if(!newSpot)
         {
             Debug.LogWarning($"No space in {newRoom.name}, despawning anomaly.");
-            
             EventManager.Current.OnAnomalyDespawn(gameObject);
-
             return;
         }
 

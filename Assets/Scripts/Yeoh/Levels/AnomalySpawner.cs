@@ -47,7 +47,9 @@ public class AnomalySpawner : MonoBehaviour
             {
                 if(activeAnomalies.Count < maxActiveAnomalies)
                 {
-                    GameObject prefab = GetRandomInactivePrefab();
+                    List<GameObject> inactivePrefabs = GetInactivePrefabs();
+
+                    GameObject prefab = GetRandomInactivePrefab(inactivePrefabs);
 
                     SpawnAnomaly(prefab);                
                 }
@@ -55,11 +57,9 @@ public class AnomalySpawner : MonoBehaviour
         }
     }
 
-    List<GameObject> inactivePrefabs = new();
-
-    void UpdateInactivePrefabs()
+    List<GameObject> GetInactivePrefabs()
     {
-        inactivePrefabs.Clear();
+        List<GameObject> inactivePrefabs = new();
 
         foreach(GameObject prefab in anomalies)
         {
@@ -68,12 +68,12 @@ public class AnomalySpawner : MonoBehaviour
                 inactivePrefabs.Add(prefab);
             }
         }
+
+        return inactivePrefabs;
     }
 
-    GameObject GetRandomInactivePrefab()
+    GameObject GetRandomInactivePrefab(List<GameObject> inactivePrefabs)
     {
-        UpdateInactivePrefabs();
-
         if(inactivePrefabs.Count>0)
         {
             return inactivePrefabs[Random.Range(0, inactivePrefabs.Count)];
