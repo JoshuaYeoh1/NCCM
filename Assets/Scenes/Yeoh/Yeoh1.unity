@@ -5901,21 +5901,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvases Group
       objectReference: {fileID: 0}
-    - target: {fileID: 5893715377185459057, guid: de1305963819b5543a6a878dc6803ba2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7399765987599858326, guid: de1305963819b5543a6a878dc6803ba2,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7399765987599858326, guid: de1305963819b5543a6a878dc6803ba2,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8770044163318380389, guid: de1305963819b5543a6a878dc6803ba2,
         type: 3}
       propertyPath: m_LocalPosition.x

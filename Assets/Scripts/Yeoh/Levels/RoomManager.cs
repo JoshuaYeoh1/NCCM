@@ -27,15 +27,19 @@ public class RoomManager : MonoBehaviour
     public List<Room> rooms = new();
     public List<Transform> occupiedSpots = new();
 
-    public Room GetRandomRoom(Room currentRoom=null)
+    public Room GetRandomRoom(Room currentRoom=null, int retries=20)
     {
-        Room room;
+        Room room=null;
 
-        do
+        for(int i=0; i<retries; i++)
         {
             room = rooms[Random.Range(0, rooms.Count)];
 
-        } while(IsPlayerRoom(room) || room.roomObj==currentRoom?.roomObj || IsRoomFull(room));
+            if(!IsPlayerRoom(room) && !IsRoomFull(room))
+            {
+                if(room.roomObj!=currentRoom?.roomObj) break;
+            }
+        }
 
         return room;
     }
@@ -77,23 +81,21 @@ public class RoomManager : MonoBehaviour
 
     public void OccupySpot(Transform spot)
     {
-        if(spot)
+        if(!spot) return;
+
+        if(!occupiedSpots.Contains(spot))
         {
-            if(!occupiedSpots.Contains(spot))
-            {
-                occupiedSpots.Add(spot);
-            }
+            occupiedSpots.Add(spot);
         }
     }
 
     public void UnoccupySpot(Transform spot)
     {
-        if(spot)
+        if(!spot) return;
+
+        if(occupiedSpots.Contains(spot))
         {
-            if(occupiedSpots.Contains(spot))
-            {
-                occupiedSpots.Remove(spot);
-            }
+            occupiedSpots.Remove(spot);
         }
     }
 
