@@ -37,8 +37,6 @@ public class AnomalyExposure : MonoBehaviour
         {
             float exposeSpeed = 1f-((float)anomaly.stun.stunCombo/anomaly.stun.stunsToExpel);
 
-            print(exposeSpeed);
-
             currentExposure += exposeSpeed*Time.deltaTime;
         }
         else currentExposure = currentMaxExposure;
