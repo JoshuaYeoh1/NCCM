@@ -1223,6 +1223,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1555846410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &550927508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550927509}
+  m_Layer: 0
+  m_Name: Toyol Spot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &550927509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550927508}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.86602557, z: -0, w: 0.4999998}
+  m_LocalPosition: {x: -1.993, y: 0, z: 1.905}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1885512879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &554572386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2033,7 +2064,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1216372283}
     m_Modifications:
     - target: {fileID: 2900181910725862890, guid: 52cde099eea62834bbfe6563863eab46,
         type: 3}
@@ -2063,17 +2094,17 @@ PrefabInstance:
     - target: {fileID: 3190907746576788411, guid: 52cde099eea62834bbfe6563863eab46,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3190907746576788411, guid: 52cde099eea62834bbfe6563863eab46,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3190907746576788411, guid: 52cde099eea62834bbfe6563863eab46,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3190907746576788411, guid: 52cde099eea62834bbfe6563863eab46,
         type: 3}
@@ -2755,6 +2786,7 @@ Transform:
   - {fileID: 7073611001248754229}
   - {fileID: 1249415075}
   - {fileID: 2006861189}
+  - {fileID: 1953898896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1216372284
@@ -2987,6 +3019,7 @@ MonoBehaviour:
     - {fileID: 622148866}
     - {fileID: 272790843}
   occupiedSpots: []
+  toyolSpot: {fileID: 550927509}
 --- !u!4 &1249415075
 Transform:
   m_ObjectHideFlags: 0
@@ -4244,8 +4277,15 @@ Transform:
   - {fileID: 1404766685}
   - {fileID: 2043145165}
   - {fileID: 1438148900}
+  - {fileID: 550927509}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1953898896 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3190907746576788411, guid: 52cde099eea62834bbfe6563863eab46,
+    type: 3}
+  m_PrefabInstance: {fileID: 1025358562}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006861187
 GameObject:
   m_ObjectHideFlags: 0
@@ -6505,10 +6545,9 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 410087041}
   - {fileID: 432113243}
   - {fileID: 1216372283}
-  - {fileID: 410087041}
-  - {fileID: 1025358562}
   - {fileID: 976707221411986442}
   - {fileID: 5449161803018622927}
   - {fileID: 1885512879}

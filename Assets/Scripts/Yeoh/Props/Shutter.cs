@@ -19,23 +19,23 @@ public class Shutter : MonoBehaviour
 
     void OnEnable()
     {
-        EventManager.Current.ShutterActivateEvent += OnShutterActivate;
+        EventManager.Current.ToggleShutterEvent += OnToggleShutter;
         EventManager.Current.AnomalyAttackEvent += OnAnomalyAttack;
         EventManager.Current.ShutterBreakEvent += OnShutterBreak;
     }
     void OnDisable()
     {
-        EventManager.Current.ShutterActivateEvent -= OnShutterActivate;
+        EventManager.Current.ToggleShutterEvent -= OnToggleShutter;
         EventManager.Current.AnomalyAttackEvent -= OnAnomalyAttack;
         EventManager.Current.ShutterBreakEvent -= OnShutterBreak;
     }
     
     void Start()
     {
-        OnShutterActivate(LevelManager.Current.shutterClosed);
+        OnToggleShutter(LevelManager.Current.shutterClosed);
     }
     
-    void OnShutterActivate(bool toggle)
+    void OnToggleShutter(bool toggle)
     {
         if(shutterHp<=0) return;
 

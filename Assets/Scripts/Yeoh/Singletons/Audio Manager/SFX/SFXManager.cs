@@ -15,4 +15,7 @@ public class SFXManager : MonoBehaviour
 
     [Header("Sound Pitch")]
     public AudioClip[] sfxSoundPitchLoop;
+
+    [Header("Toyol")]
+    public AudioClip[] sfxToyolTrollLoop;
 }

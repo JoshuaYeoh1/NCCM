@@ -73,7 +73,7 @@ public class EventManager : MonoBehaviour
     public event Action<bool> ToggleFlashEvent;
     public event Action<bool> ToggleCageEvent;
     public event Action<bool> ToggleLightsEvent;
-    public event Action<bool> ShutterActivateEvent;
+    public event Action<bool> ToggleShutterEvent;
     public event Action ShutterBreakEvent;
     
     public void OnToggleSoundPitch(bool toggle)
@@ -92,9 +92,9 @@ public class EventManager : MonoBehaviour
     {
         ToggleLightsEvent?.Invoke(toggle);
     }
-    public void OnShutterActivate(bool toggle)
+    public void OnToggleShutter(bool toggle)
     {
-        ShutterActivateEvent?.Invoke(toggle);
+        ToggleShutterEvent?.Invoke(toggle);
     }
     public void OnShutterBreak()
     {

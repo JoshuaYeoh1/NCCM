@@ -25,7 +25,6 @@ public class RoomManager : MonoBehaviour
     public GameObject playerRoomObj;
 
     public List<Room> rooms = new();
-
     public List<Transform> occupiedSpots = new();
 
     public Room GetRandomRoom(Room currentRoom=null)
@@ -99,4 +98,6 @@ public class RoomManager : MonoBehaviour
         }
         return true;
     }
+
+    public Transform toyolSpot;
 }

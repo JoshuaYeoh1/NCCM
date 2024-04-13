@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSoundPitchLoop:
   - {fileID: 8300000, guid: ae29ebeecf0492d49adbaeff21049436, type: 3}
+  sfxToyolTrollLoop:
+  - {fileID: 8300000, guid: 507f24e706a9a8743a52290e6752cad6, type: 3}

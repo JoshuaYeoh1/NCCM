@@ -17,6 +17,6 @@ public class ShutterButton : MonoBehaviour
     {
         if(target!=gameObject) return;
         
-        EventManager.Current.OnShutterActivate(!LevelManager.Current.shutterClosed);
+        EventManager.Current.OnToggleShutter(!LevelManager.Current.shutterClosed);
     }
 }
