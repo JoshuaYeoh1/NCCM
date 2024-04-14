@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2848803891153716437}
   - component: {fileID: 7557427470317703323}
   - component: {fileID: -1886017825306822411}
+  - component: {fileID: 6232915968191377893}
   m_Layer: 0
   m_Name: Toyol
   m_TagString: Untagged
@@ -80,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00fc1df67cfc914498bf93d724060097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  billboard: {fileID: 3952023516951402946}
+  billboard: {fileID: 8942592633781982638}
   moveDelay: {x: 10, y: 15}
   moveCycles: {x: 2, y: 4}
   currentRoom:
@@ -148,6 +149,20 @@ MonoBehaviour:
   lightTrollInterval: {x: 0.1, y: 0.5}
   shutterTrollInterval: {x: 0.3, y: 0.7}
   camTrollInterval: {x: 0.1, y: 0.3}
+--- !u!114 &6232915968191377893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918394510846950035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74af230104c8654ca0518e90dc9230d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: {fileID: 4089688291214011270}
+  jumpChance: 33
 --- !u!1 &4515040610068683874
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,10 +172,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4490028054878512748}
-  - component: {fileID: 8173292256977118211}
-  - component: {fileID: 3952023516951402946}
+  - component: {fileID: 5382066788615179552}
   m_Layer: 0
-  m_Name: Art
+  m_Name: Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,16 +192,76 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.022, z: 0}
   m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 6357990073297235573}
   m_Father: {fileID: 3816762821230632054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8173292256977118211
-SpriteRenderer:
+--- !u!114 &5382066788615179552
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4515040610068683874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03fc35bfddc6cb43b9ce227fc6aeb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wigglePos: 1
+  posFrequency: {x: 0.2, y: 0, z: 0.2}
+  posMagnitude: {x: 0.1, y: 0, z: 0.1}
+  wiggleRot: 0
+  rotFrequency: {x: 0, y: 0, z: 0}
+  rotMagnitude: {x: 0, y: 0, z: 0}
+  wiggleScale1: 0
+  scaleFrequency: 0
+  scaleMagnitude: 0
+  wiggleScale2: 0
+  scaleFrequency2: {x: 0, y: 0, z: 0}
+  scaleMagnitude2: {x: 0, y: 0, z: 0}
+  ignoreTime: 0
+--- !u!1 &6285022295062990195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6357990073297235573}
+  - component: {fileID: 895218756424099868}
+  - component: {fileID: 8942592633781982638}
+  - component: {fileID: 4089688291214011270}
+  m_Layer: 0
+  m_Name: Art
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6357990073297235573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285022295062990195}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 4490028054878512748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &895218756424099868
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285022295062990195}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -233,13 +307,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3952023516951402946
+--- !u!114 &8942592633781982638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4515040610068683874}
+  m_GameObject: {fileID: 6285022295062990195}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97f32b509df505a47a81fe2fb6a29834, type: 3}
@@ -248,3 +322,15 @@ MonoBehaviour:
   faceCamera: {fileID: 0}
   onlyY: 0
   fixedUpdate: 1
+--- !u!114 &4089688291214011270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285022295062990195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254496124f437894abebe3927247c542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

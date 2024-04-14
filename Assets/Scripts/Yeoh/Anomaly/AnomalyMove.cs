@@ -72,7 +72,7 @@ public class AnomalyMove : MonoBehaviour
                 {
                     Teleport(RoomManager.Current.GetPlayerRoom());
 
-                    EventManager.Current.OnAnomalyReachedWindow(gameObject);
+                    EventManager.Current.OnAnomalyEnterExposing(gameObject);
                 }  
             }
         }

@@ -30,10 +30,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2918394510846950035}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.51386, y: 0.51386, z: 0.51386}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4490028054878512748}
   m_Father: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4490028054878512748}
   - component: {fileID: 8173292256977118211}
   - component: {fileID: 3952023516951402946}
-  - component: {fileID: 8455577868207357040}
+  - component: {fileID: 3106383266309927695}
   m_Layer: 0
   m_Name: Art
   m_TagString: Untagged
@@ -174,9 +174,9 @@ Transform:
   m_GameObject: {fileID: 4515040610068683874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.87, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: -0.06, z: 0}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3816762821230632054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: de9f28395fd138347af2d725927e1fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -221,7 +221,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -19
-  m_Sprite: {fileID: 21300000, guid: 71a30f68769fb4a4787927232d394dbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6df53a60f86e86042b7475854b1554ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   faceCamera: {fileID: 0}
   onlyY: 0
   fixedUpdate: 1
---- !u!114 &8455577868207357040
+--- !u!114 &3106383266309927695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wigglePos: 1
-  posFrequency: {x: 1, y: 1, z: 1}
-  posMagnitude: {x: 0.5, y: 0.5, z: 0.5}
+  posFrequency: {x: 0.2, y: 0, z: 0.2}
+  posMagnitude: {x: 0.2, y: 0, z: 0.2}
   wiggleRot: 0
   rotFrequency: {x: 0, y: 0, z: 0}
   rotMagnitude: {x: 0, y: 0, z: 0}

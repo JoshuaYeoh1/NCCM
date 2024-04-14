@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 4490028054878512748}
   - component: {fileID: 8173292256977118211}
   - component: {fileID: 3952023516951402946}
+  - component: {fileID: 1807808921957239633}
   m_Layer: 0
   m_Name: Art
   m_TagString: Untagged
@@ -246,3 +247,28 @@ MonoBehaviour:
   faceCamera: {fileID: 0}
   onlyY: 0
   fixedUpdate: 1
+--- !u!114 &1807808921957239633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515040610068683874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03fc35bfddc6cb43b9ce227fc6aeb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wigglePos: 1
+  posFrequency: {x: 0.2, y: 0, z: 0.2}
+  posMagnitude: {x: 0.2, y: 0, z: 0.2}
+  wiggleRot: 0
+  rotFrequency: {x: 0, y: 0, z: 0}
+  rotMagnitude: {x: 0, y: 0, z: 0}
+  wiggleScale1: 0
+  scaleFrequency: 0
+  scaleMagnitude: 0
+  wiggleScale2: 0
+  scaleFrequency2: {x: 0, y: 0, z: 0}
+  scaleMagnitude2: {x: 0, y: 0, z: 0}
+  ignoreTime: 0

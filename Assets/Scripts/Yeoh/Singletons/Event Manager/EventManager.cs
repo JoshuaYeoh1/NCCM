@@ -106,7 +106,8 @@ public class EventManager : MonoBehaviour
     public event Action<GameObject, Room, Transform> AnomalySpawnEvent;
     public event Action<GameObject, Room, Transform> AnomalyTeleportEvent;
     public event Action<GameObject> AnomalyTeleportRandomEvent;
-    public event Action<GameObject> AnomalyReachedWindowEvent;
+    public event Action<GameObject> AnomalyEnterExposingEvent;
+    public event Action<GameObject> AnomalyExitExposingEvent;
     public event Action<GameObject, float> AnomalyAttackEvent;
     public event Action<GameObject> AnomalyJumpscareEvent;
     public event Action<GameObject> AnomalyAlertOtherEvent;
@@ -131,11 +132,13 @@ public class EventManager : MonoBehaviour
     {
         AnomalyTeleportRandomEvent?.Invoke(teleportee);
     }
-    public void OnAnomalyReachedWindow(GameObject anomaly)
+    public void OnAnomalyEnterExposing(GameObject anomaly)
     {
-        AnomalyReachedWindowEvent?.Invoke(anomaly);
-
-        Debug.Log($"{anomaly.name} reached Player Window");
+        AnomalyEnterExposingEvent?.Invoke(anomaly);
+    }
+    public void OnAnomalyExitExposing(GameObject anomaly)
+    {
+        AnomalyExitExposingEvent?.Invoke(anomaly);
     }
     public void OnAnomalyAttack(GameObject attacker, float dmg)
     {

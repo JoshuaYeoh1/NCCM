@@ -18,6 +18,8 @@ public class AnomalyState_Exposing : BaseState
         Debug.Log($"{anomaly.gameObject.name} State: {Name}");
 
         anomaly.stun.ResetStuns();
+
+        EventManager.Current.OnAnomalyEnterExposing(anomaly.gameObject);
     }
 
     protected override void OnUpdate(float deltaTime)
@@ -31,5 +33,6 @@ public class AnomalyState_Exposing : BaseState
 
     protected override void OnExit()
     {
+        EventManager.Current.OnAnomalyExitExposing(anomaly.gameObject);
     }
 }

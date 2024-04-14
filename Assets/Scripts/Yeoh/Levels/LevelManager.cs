@@ -19,13 +19,13 @@ public class LevelManager : MonoBehaviour
     void OnEnable()
     {
         EventManager.Current.AnomalyTeleportEvent += OnAnomalyTeleport;
-        EventManager.Current.AnomalyReachedWindowEvent += OnAnomalyReachedWindow;
+        EventManager.Current.AnomalyEnterExposingEvent += OnAnomalyEnterExposing;
         EventManager.Current.AnomalyDespawnEvent += OnAnomalyDespawn;
     }
     void OnDisable()
     {
         EventManager.Current.AnomalyTeleportEvent -= OnAnomalyTeleport;
-        EventManager.Current.AnomalyReachedWindowEvent -= OnAnomalyReachedWindow;
+        EventManager.Current.AnomalyEnterExposingEvent -= OnAnomalyEnterExposing;
         EventManager.Current.AnomalyDespawnEvent -= OnAnomalyDespawn;
     }
     
@@ -67,7 +67,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void OnAnomalyReachedWindow(GameObject anomaly)
+    void OnAnomalyEnterExposing(GameObject anomaly)
     {
         AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIAppearAtWindow, anomaly.transform.position, false);
     }

@@ -21,6 +21,8 @@ public class SpriteBillboard : MonoBehaviour
 
     void Billboard()
     {
+        if(!faceCamera) return;
+        
         if(onlyY) transform.rotation = Quaternion.Euler(0, faceCamera.rotation.eulerAngles.y, 0);
         else transform.rotation = faceCamera.rotation;
     }
