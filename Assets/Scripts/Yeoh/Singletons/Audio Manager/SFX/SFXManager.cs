@@ -35,9 +35,11 @@ public class SFXManager : MonoBehaviour
     [Header("PvZ")]
     public AudioClip[] sfxUIPaper;
 
+    [Header("SpookyHouse")]
+    public AudioClip[] sfxToyolLoop;    
+
     [Header("Yeoh")]
     public AudioClip[] sfxSoundPitchLoop;
-    public AudioClip[] sfxToyolTrollLoop;
     public AudioClip[] sfxExorciseFailScream;
     public AudioClip[] sfxStaticLoop;
     public AudioClip[] sfxJumpscare;

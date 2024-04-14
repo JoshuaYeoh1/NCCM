@@ -88,10 +88,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0c03ffe0436fb3c43862e055987d150f, type: 3}
   sfxUIPaper:
   - {fileID: 8300000, guid: 6e2c30b324d828b42853214136648f80, type: 3}
+  sfxToyolLoop:
+  - {fileID: 8300000, guid: bd687d654d4e5a8418a36337faec8a73, type: 3}
   sfxSoundPitchLoop:
   - {fileID: 8300000, guid: ae29ebeecf0492d49adbaeff21049436, type: 3}
-  sfxToyolTrollLoop:
-  - {fileID: 8300000, guid: 507f24e706a9a8743a52290e6752cad6, type: 3}
   sfxExorciseFailScream:
   - {fileID: 8300000, guid: 0490b253e238f3f4ea2c80e74a1d3275, type: 3}
   - {fileID: 8300000, guid: 8582800cfb29f9e4f9c33d88ab36e8c8, type: 3}

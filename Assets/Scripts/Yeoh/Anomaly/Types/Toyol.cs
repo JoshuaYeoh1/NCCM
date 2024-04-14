@@ -31,7 +31,7 @@ public class Toyol : MonoBehaviour
 
     void StartTroll()
     {
-        trollLoopSound = AudioManager.Current.LoopSFX(gameObject, SFXManager.Current.sfxToyolTrollLoop, true, false);
+        trollLoopSound = AudioManager.Current.LoopSFX(gameObject, SFXManager.Current.sfxToyolLoop);
 
         transform.position = RoomManager.Current.toyolSpot.position;
         transform.rotation = RoomManager.Current.toyolSpot.rotation;
@@ -77,6 +77,8 @@ public class Toyol : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(shutterTrollInterval.x, shutterTrollInterval.y));
             
             EventManager.Current.OnToggleShutter(!LevelManager.Current.shutterClosed);
+
+            CameraManager.Current.Shake(.5f);
         }
     }
 
