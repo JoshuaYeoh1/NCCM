@@ -24,11 +24,13 @@ public class AnomalySpawner : MonoBehaviour
     void OnEnable()
     {
         EventManager.Current.ClockInEvent += OnClockIn;
+        EventManager.Current.AnomalyAlertOtherEvent += OnAnomalyAlertOther;
         EventManager.Current.AnomalyDespawnEvent += OnAnomalyDespawn;
     }
     void OnDisable()
     {
         EventManager.Current.ClockInEvent -= OnClockIn;
+        EventManager.Current.AnomalyAlertOtherEvent -= OnAnomalyAlertOther;
         EventManager.Current.AnomalyDespawnEvent -= OnAnomalyDespawn;
     }
     
@@ -104,4 +106,32 @@ public class AnomalySpawner : MonoBehaviour
 
         activeAnomalies.Remove(anomaly);
     } 
+
+    void OnAnomalyAlertOther(GameObject alerter)
+    {
+        List<GameObject> farAnomalies = new();
+
+        Room playerRoom = RoomManager.Current.GetPlayerRoom();
+
+        foreach(GameObject anom in GetActiveAnomalies())
+        {
+            AnomalyMove move = anom.GetComponent<AnomalyMove>();
+
+            if(move && move.currentRoom != playerRoom)
+            {
+                farAnomalies.Add(anom);
+            }
+        }
+        
+        if(farAnomalies.Count==0) return;
+
+        AnomalyMove chosenAnom = farAnomalies[Random.Range(0, farAnomalies.Count)].GetComponent<AnomalyMove>();
+
+        chosenAnom.Teleport(playerRoom);
+    }
+
+    public List<GameObject> GetActiveAnomalies()
+    {
+        return new List<GameObject>(activeAnomalies.Keys);
+    }
 }

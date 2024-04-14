@@ -109,6 +109,7 @@ public class EventManager : MonoBehaviour
     public event Action<GameObject> AnomalyReachedWindowEvent;
     public event Action<GameObject, float> AnomalyAttackEvent;
     public event Action<GameObject> AnomalyJumpscareEvent;
+    public event Action<GameObject> AnomalyAlertOtherEvent;
     public event Action<GameObject> AnomalyStunEvent;
     public event Action<GameObject> AnomalyRecoverEvent;
     public event Action<GameObject> AnomalyExpelEvent;
@@ -147,6 +148,10 @@ public class EventManager : MonoBehaviour
         AnomalyJumpscareEvent?.Invoke(predator);
 
         Debug.Log($"{predator.name} JUMPSCARE AHAHAHAHA");
+    }
+    public void OnAnomalyAlertOther(GameObject alerter)
+    {
+        AnomalyAlertOtherEvent?.Invoke(alerter);
     }
     public void OnAnomalyStun(GameObject victim)
     {

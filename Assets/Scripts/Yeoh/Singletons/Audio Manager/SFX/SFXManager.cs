@@ -32,6 +32,9 @@ public class SFXManager : MonoBehaviour
     public AudioClip[] sfxUIAppearAtWindow;
     public AudioClip[] sfxUIExorcise;
 
+    [Header("PvZ")]
+    public AudioClip[] sfxUIPaper;
+
     [Header("Yeoh")]
     public AudioClip[] sfxSoundPitchLoop;
     public AudioClip[] sfxToyolTrollLoop;

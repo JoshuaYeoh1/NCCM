@@ -29,12 +29,7 @@ public class Shutter : MonoBehaviour
         EventManager.Current.AnomalyAttackEvent -= OnAnomalyAttack;
         EventManager.Current.ShutterBreakEvent -= OnShutterBreak;
     }
-    
-    void Start()
-    {
-        OnToggleShutter(LevelManager.Current.shutterClosed);
-    }
-    
+        
     void OnToggleShutter(bool toggle)
     {
         if(shutterHp<=0) return;

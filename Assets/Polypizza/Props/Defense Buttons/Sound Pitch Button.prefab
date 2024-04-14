@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 0
-  activeTime: 5
-  cooldownTime: 5
+  activeTime: 6
+  cooldownTime: 12.5
   buttonMat: {fileID: 2100000, guid: 46413830f37799a4b9f959a8e16031b5, type: 2}
   disabledColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4041712525117391913

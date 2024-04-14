@@ -24,7 +24,7 @@ public class DoorLock : MonoBehaviour
         else UnlockDoor();
     }
     
-    public float doorLockTime=5;
+    public float doorLockTime=6;
 
     void OnClick(GameObject target)
     {

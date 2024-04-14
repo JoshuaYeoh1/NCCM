@@ -24,11 +24,11 @@ public class ExorcistManager : MonoBehaviour
     public bool shamanAlive=true;
     public bool priestAlive=true;
 
-    public Vector2 exorciseDelay = new Vector2(5, 6);
+    public Vector2 exorciseDelay = new Vector2(5, 7.5f);
 
     public bool busy;
 
-    public float cooldownTime=30;
+    public Vector2 cooldownTime = new Vector2(45, 60);
 
     void OnEnable()
     {
@@ -134,7 +134,7 @@ public class ExorcistManager : MonoBehaviour
         }
         else Debug.Log($"No anomaly found. You prank called the {exorcistType} wtf");
 
-        Invoke(nameof(Cooldown), cooldownTime);
+        Invoke(nameof(Cooldown), Random.Range(cooldownTime.x, cooldownTime.y));
     }
 
     void Cooldown()

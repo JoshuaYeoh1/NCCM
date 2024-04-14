@@ -32,10 +32,11 @@ public class TestAnomaly : MonoBehaviour
 
         AudioManager.Current.PlaySFX(SFXManager.Current.sfxJumpscare, transform.position, false);
 
-        anomaly.exposure.canJumpscare=false;
+        if(anomaly.type==AnomalyType.Passive)
+        {
+            EventManager.Current.OnAnomalyAlertOther(predator);
+        }
 
-        EventManager.Current.OnAnomalyTeleportRandom(predator);
-        
-        //EventManager.Current.OnAnomalyDespawn(predator);
+        EventManager.Current.OnAnomalyDespawn(predator);
     }
 }

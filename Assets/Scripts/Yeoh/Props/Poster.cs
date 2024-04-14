@@ -32,5 +32,7 @@ public class Poster : MonoBehaviour
         Time.timeScale=0;
 
         Instantiate(posterCanvasPrefab, transform.position, Quaternion.identity);
+
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIPaper, transform.position, false);
     }
 }

@@ -86,6 +86,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d74226999dbaf6a44a6758f541fa1acd, type: 3}
   sfxUIExorcise:
   - {fileID: 8300000, guid: 0c03ffe0436fb3c43862e055987d150f, type: 3}
+  sfxUIPaper:
+  - {fileID: 8300000, guid: 6e2c30b324d828b42853214136648f80, type: 3}
   sfxSoundPitchLoop:
   - {fileID: 8300000, guid: ae29ebeecf0492d49adbaeff21049436, type: 3}
   sfxToyolTrollLoop:

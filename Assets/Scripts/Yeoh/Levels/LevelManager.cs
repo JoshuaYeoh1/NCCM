@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
         if(!Current) Current=this;
         else Destroy(gameObject);
 
-        InvokeRepeating(nameof(CheckAnomaliesAtWindow), 1, .5f);
+        InvokeRepeating(nameof(CheckAnomaliesAtWindow), .1f, .5f);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////

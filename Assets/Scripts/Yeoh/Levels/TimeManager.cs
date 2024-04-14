@@ -15,7 +15,7 @@ public class TimeManager : MonoBehaviour
 
     public int hour=10;
     public string meridiem="pm";
-    public float realHourInterval=45;
+    public Vector2 realHourInterval = new Vector2(45, 60);
 
     void OnEnable()
     {
@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour
         {
             EventManager.Current.OnHourTick(hour);
 
-            yield return new WaitForSeconds(realHourInterval);
+            yield return new WaitForSeconds(Random.Range(realHourInterval.x, realHourInterval.y));
 
             hour++;
 

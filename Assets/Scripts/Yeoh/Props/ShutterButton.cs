@@ -18,5 +18,7 @@ public class ShutterButton : MonoBehaviour
         if(target!=gameObject) return;
         
         EventManager.Current.OnToggleShutter(!LevelManager.Current.shutterClosed);
+
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxCageBtn, transform.position);
     }
 }

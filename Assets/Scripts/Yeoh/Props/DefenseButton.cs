@@ -15,8 +15,8 @@ public class DefenseButton : MonoBehaviour
 
     bool canPress=true;
 
-    public float activeTime=5;
-    public float cooldownTime=5;
+    public float activeTime=6;
+    public float cooldownTime=12.5f;
 
     public Material buttonMat;
     public Color disabledColor;
