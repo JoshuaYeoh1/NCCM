@@ -63,5 +63,7 @@ public class DoorLock : MonoBehaviour
     {
         unlockIcon.SetActive(!toggle);
         lockIcon.SetActive(toggle);
+
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxDoor, transform.position);
     }
 }

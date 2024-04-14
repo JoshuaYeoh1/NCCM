@@ -13,11 +13,29 @@ public class SFXManager : MonoBehaviour
 
     ////////////////////////////////////////////////////////////////////////////////////
 
+    [Header("FEAR")]
+    public AudioClip[] sfxCage;
+    public AudioClip[] sfxCageBreak;
+    public AudioClip[] sfxDoor;
+    public AudioClip[] sfxUIExpel;
+    public AudioClip[] sfxShutter;
+
+    [Header("L4D2")]
+    public AudioClip[] sfxCageBtn;
+    public AudioClip[] sfxFlashBtn;
+    public AudioClip[] sfxLightSwitch;
+    public AudioClip[] sfxShutterBreak;
+    public AudioClip[] sfxShutterHit;
+    public AudioClip[] sfxSoundPitchBtn;
+
+    [Header("Minecraft")]
+    public AudioClip[] sfxUIAppearAtWindow;
+    public AudioClip[] sfxUIExorcise;
+
+    [Header("Yeoh")]
     public AudioClip[] sfxSoundPitchLoop;
     public AudioClip[] sfxToyolTrollLoop;
-    public AudioClip[] sfxExorciseSuccessScream;
     public AudioClip[] sfxExorciseFailScream;
     public AudioClip[] sfxStaticLoop;
     public AudioClip[] sfxJumpscare;
-
 }

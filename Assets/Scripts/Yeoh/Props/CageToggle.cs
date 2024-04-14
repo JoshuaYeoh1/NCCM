@@ -31,4 +31,20 @@ public class CageToggle : MonoBehaviour
 
         cage.SetActive(stun.isCageStunned);
     }
+
+    bool cageEnabled;
+
+    void Update()
+    {
+        if(cage.activeSelf && !cageEnabled)
+        {
+            cageEnabled=true;
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxCage, transform.position);
+        }
+        else if(!cage.activeSelf && cageEnabled)
+        {
+            cageEnabled=false;
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxCageBreak, transform.position);
+        }
+    }
 }

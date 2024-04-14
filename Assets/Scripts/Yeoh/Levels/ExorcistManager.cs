@@ -111,7 +111,7 @@ public class ExorcistManager : MonoBehaviour
 
             EventManager.Current.OnAnomalyDespawn(randomTarget);
 
-            AudioManager.Current.PlaySFX(SFXManager.Current.sfxExorciseSuccessScream, transform.position, false, true, Random.Range(-1f, 1f));
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIExorcise, transform.position, false, true, Random.Range(-1f, 1f));
         }
         else if(wrongTypes.Count>0)
         {

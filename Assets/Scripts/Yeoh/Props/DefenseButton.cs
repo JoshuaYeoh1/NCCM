@@ -58,6 +58,8 @@ public class DefenseButton : MonoBehaviour
             LevelManager.Current.soundPitchActive=true;
 
             Invoke(nameof(DisableSoundPitch), activeTime);
+
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxSoundPitchBtn, transform.position);
         }
         else if(buttonType==ButtonType.Flash)
         {
@@ -66,6 +68,8 @@ public class DefenseButton : MonoBehaviour
             LevelManager.Current.flashActive=true;
 
             Invoke(nameof(DisableFlash), activeTime);
+
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxFlashBtn, transform.position);
         }
         else if(buttonType==ButtonType.Cage)
         {
@@ -74,6 +78,8 @@ public class DefenseButton : MonoBehaviour
             LevelManager.Current.cageActive=true;
 
             Invoke(nameof(DisableCage), activeTime);
+
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxCageBtn, transform.position);
         }
 
         Invoke(nameof(Cooldown), activeTime + cooldownTime);

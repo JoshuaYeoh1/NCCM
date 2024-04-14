@@ -16,13 +16,13 @@ public class AmbientManager : MonoBehaviour
 
     [Header("Ambient")]
     public bool ambEnabled=true;
-    public AudioClip[] ambWind;
+    public AudioClip[] ambLong;
 
     List<AudioClip> currentClips = new List<AudioClip>();
 
     void Start()
     {
-        if(HasClips(ambWind)) SwapAmb(ambWind);
+        if(HasClips(ambLong)) SwapAmb(ambLong);
     }
 
     void RestartAmb()
@@ -44,7 +44,7 @@ public class AmbientManager : MonoBehaviour
         
         if(HasClips(clips))
         {
-            currentClips.AddRange(ambWind);
+            currentClips.AddRange(ambLong);
             RestartAmb();
         }
     }
@@ -100,7 +100,7 @@ public class AmbientManager : MonoBehaviour
     [Header("Short Ambient")]
     public bool ambShortEnabled=true;
     public AudioClip[] ambShort;
-    public float minShortAmbInterval=2, maxShortAmbInterval=10;
+    public Vector2 ambShortInterval = new Vector2(2, 10);
 
     void OnEnable()
     {
@@ -117,7 +117,7 @@ public class AmbientManager : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(Random.Range(minShortAmbInterval, maxShortAmbInterval));
+            yield return new WaitForSeconds(Random.Range(ambShortInterval.x, ambShortInterval.y));
 
             if(ambShortEnabled)
             {

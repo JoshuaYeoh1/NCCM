@@ -51,6 +51,8 @@ public class Shutter : MonoBehaviour
         {
             LeanTween.move(gameObject, openPos, animTime).setEaseInOutSine();
         }
+
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxShutter, transform.position);
     }
 
     [ContextMenu("Record Open Position")]
@@ -93,6 +95,9 @@ public class Shutter : MonoBehaviour
         CameraManager.Current.Shake();
 
         EventManager.Current.OnUIBarUpdate(LevelManager.Current.gameObject, shutterHp, shutterHpMax);
+
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxShutterHit, transform.position);
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxShutterBreak, transform.position);
     }
 
     void OnShutterBreak()

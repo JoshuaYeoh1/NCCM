@@ -18,5 +18,7 @@ public class LightSwitch : MonoBehaviour
         if(target!=gameObject) return;
         
         EventManager.Current.OnToggleLights(!LevelManager.Current.lightsOn);
+
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxLightSwitch, transform.position);
     }
 }

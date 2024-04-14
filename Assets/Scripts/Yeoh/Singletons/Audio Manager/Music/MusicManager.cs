@@ -114,7 +114,7 @@ public class MusicManager : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    public void ChangeLayer(int layerIndex, float outTime=3, float waitTime=1, float inTime=3)
+    public void ChangeLayer(int layerIndex, float outTime=2, float waitTime=0, float inTime=2)
     {
         if(currentLayer==layers[layerIndex]) return;
 

@@ -126,6 +126,8 @@ public class AnomalyMove : MonoBehaviour
         if(anomaly!=gameObject) return;
 
         EventManager.Current.OnAnomalyTeleportRandom(anomaly);
+
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIExpel, transform.position, false);
     }
 
     void OnAnomalyDespawn(GameObject anomaly)
