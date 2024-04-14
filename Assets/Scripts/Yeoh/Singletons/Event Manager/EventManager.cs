@@ -195,9 +195,15 @@ public class EventManager : MonoBehaviour
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public event Action<GameObject, float, float> UIBarUpdateEvent;
+    public event Action<float> CamStaticEvent;
 
     public void OnUIBarUpdate(GameObject owner, float value, float valueMax)
     {
         UIBarUpdateEvent?.Invoke(owner, value, valueMax);
     }
+    public void OnCamStatic(float staticTime)
+    {
+        CamStaticEvent?.Invoke(staticTime);
+    }
+    
 }

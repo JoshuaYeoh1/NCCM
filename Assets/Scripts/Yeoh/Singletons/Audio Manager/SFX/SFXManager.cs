@@ -13,13 +13,11 @@ public class SFXManager : MonoBehaviour
 
     ////////////////////////////////////////////////////////////////////////////////////
 
-    [Header("Sound Pitch")]
     public AudioClip[] sfxSoundPitchLoop;
-
-    [Header("Toyol")]
     public AudioClip[] sfxToyolTrollLoop;
-    
-    [Header("Screams")]
     public AudioClip[] sfxExorciseSuccessScream;
     public AudioClip[] sfxExorciseFailScream;
+    public AudioClip[] sfxStaticLoop;
+
+
 }

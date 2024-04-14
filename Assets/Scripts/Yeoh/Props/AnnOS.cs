@@ -59,7 +59,10 @@ public class AnnOS : MonoBehaviour
                 {
                     if(target==camBtns[i])
                     {
-                        EventManager.Current.OnChangeCamera(i);
+                        if(currentCam != i+1)
+                        {
+                            EventManager.Current.OnChangeCamera(i);
+                        }
                     }
                 }
 

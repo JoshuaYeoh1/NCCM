@@ -176,6 +176,8 @@ public class AudioManager : MonoBehaviour
 
     public void StopLoop(AudioSource loopSource, AudioClip[] outClips)
     {
+        if(!loopSource) return;
+        
         if(HasClips(outClips))
         {
             loopSource.clip = outClips[Random.Range(0,outClips.Length)];
