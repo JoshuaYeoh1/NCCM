@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfa233c07461a146a0c5081da0df70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxUIHeartbeat:
+  - {fileID: 8300000, guid: 159020631d4206f41a4652347ad09917, type: 3}
   sfxUIClockIn:
   - {fileID: 8300000, guid: 0811aa5ba799e97418fcd3b5e9f56239, type: 3}
   sfxCage:

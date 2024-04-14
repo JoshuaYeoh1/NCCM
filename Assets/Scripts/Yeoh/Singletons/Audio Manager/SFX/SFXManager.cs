@@ -13,6 +13,9 @@ public class SFXManager : MonoBehaviour
 
     ////////////////////////////////////////////////////////////////////////////////////
 
+    [Header("Chivalry")]
+    public AudioClip[] sfxUIHeartbeat;
+
     [Header("CSGO")]
     public AudioClip[] sfxUIClockIn;
 
