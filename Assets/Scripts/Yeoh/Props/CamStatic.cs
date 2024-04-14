@@ -34,7 +34,7 @@ public class CamStatic : MonoBehaviour
 
     void OnChangeCamera(int index)
     {
-        EventManager.Current.OnCamStatic(Random.Range(staticTime.x, staticTime.y));
+        //EventManager.Current.OnCamStatic(Random.Range(staticTime.x, staticTime.y));
     }
 
     void OnAnomalySpawn(GameObject spawned, Room room, Transform spot)

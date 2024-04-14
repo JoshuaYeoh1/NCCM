@@ -13,20 +13,29 @@ public class SFXManager : MonoBehaviour
 
     ////////////////////////////////////////////////////////////////////////////////////
 
+    [Header("CSGO")]
+    public AudioClip[] sfxUIClockIn;
+
     [Header("FEAR")]
     public AudioClip[] sfxCage;
     public AudioClip[] sfxCageBreak;
+    public AudioClip[] sfxCamBtn;
     public AudioClip[] sfxDoor;
     public AudioClip[] sfxUIExpel;
     public AudioClip[] sfxShutter;
 
     [Header("L4D2")]
     public AudioClip[] sfxCageBtn;
+    public AudioClip[] sfxUIExorcistUpdate;
     public AudioClip[] sfxFlashBtn;
     public AudioClip[] sfxLightSwitch;
+    public AudioClip[] sfxReportBtn;
     public AudioClip[] sfxShutterBreak;
     public AudioClip[] sfxShutterHit;
     public AudioClip[] sfxSoundPitchBtn;
+
+    [Header("Lego")]
+    public AudioClip[] sfxPcBtn;
 
     [Header("Minecraft")]
     public AudioClip[] sfxUIAppearAtWindow;

@@ -44,6 +44,8 @@ public class AnnOS : MonoBehaviour
             if(target==gameObject)
             {
                 ToggleAnnOSView(true);
+
+                AudioManager.Current.PlaySFX(SFXManager.Current.sfxPcBtn, transform.position);
             }
         }
         else
@@ -51,6 +53,8 @@ public class AnnOS : MonoBehaviour
             if(target==backBtn)
             {
                 ToggleAnnOSView(false);
+
+                AudioManager.Current.PlaySFX(SFXManager.Current.sfxPcBtn, transform.position);
             }
 
             if(camScreen.activeSelf)
@@ -62,6 +66,8 @@ public class AnnOS : MonoBehaviour
                         if(currentCam != i+1)
                         {
                             EventManager.Current.OnChangeCamera(i);
+
+                            AudioManager.Current.PlaySFX(SFXManager.Current.sfxPcBtn, transform.position);
                         }
                     }
                 }
@@ -69,6 +75,8 @@ public class AnnOS : MonoBehaviour
                 if(target==reportBtn)
                 {
                     SwitchScreen("Report Screen");
+
+                    AudioManager.Current.PlaySFX(SFXManager.Current.sfxPcBtn, transform.position);
                 }
             }
             else if(reportScreen.activeSelf)
@@ -76,24 +84,38 @@ public class AnnOS : MonoBehaviour
                 if(target==reportBackBtn)
                 {
                     SwitchScreen("Camera Screen");
+
+                    AudioManager.Current.PlaySFX(SFXManager.Current.sfxPcBtn, transform.position);
                 }
                 else if(target==hunterBtn)
                 {
                     SwitchScreen("Camera Screen");
 
                     EventManager.Current.OnReport(ExorcistType.Hunter);
+
+                    AudioManager.Current.PlaySFX(SFXManager.Current.sfxPcBtn, transform.position);
+
+                    AudioManager.Current.PlaySFX(SFXManager.Current.sfxReportBtn, transform.position);
                 }
                 else if(target==shamanBtn)
                 {
                     SwitchScreen("Camera Screen");
 
                     EventManager.Current.OnReport(ExorcistType.Shaman);
+
+                    AudioManager.Current.PlaySFX(SFXManager.Current.sfxPcBtn, transform.position);
+
+                    AudioManager.Current.PlaySFX(SFXManager.Current.sfxReportBtn, transform.position);
                 }
                 else if(target==priestBtn)
                 {
                     SwitchScreen("Camera Screen");
 
                     EventManager.Current.OnReport(ExorcistType.Priest);
+
+                    AudioManager.Current.PlaySFX(SFXManager.Current.sfxPcBtn, transform.position);
+
+                    AudioManager.Current.PlaySFX(SFXManager.Current.sfxReportBtn, transform.position);
                 }
             }
             
@@ -137,6 +159,8 @@ public class AnnOS : MonoBehaviour
             }
             else camViews[i].SetActive(false);
         }
+        
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxCamBtn, transform.position);
     }
 
     void SwitchScreen(string type)

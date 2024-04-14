@@ -112,6 +112,8 @@ public class ExorcistManager : MonoBehaviour
             EventManager.Current.OnAnomalyDespawn(randomTarget);
 
             AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIExorcise, transform.position, false, true, Random.Range(-1f, 1f));
+
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIExorcistUpdate, transform.position, false);
         }
         else if(wrongTypes.Count>0)
         {
@@ -131,6 +133,8 @@ public class ExorcistManager : MonoBehaviour
             EventManager.Current.OnExorcistDeath(exorcistType);
 
             AudioManager.Current.PlaySFX(SFXManager.Current.sfxExorciseFailScream, transform.position, false, true, Random.Range(-1f, 1f));
+
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIExorcistUpdate, transform.position, false);
         }
         else Debug.Log($"No anomaly found. You prank called the {exorcistType} wtf");
 

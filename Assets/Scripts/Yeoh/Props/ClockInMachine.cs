@@ -24,6 +24,8 @@ public class ClockInMachine : MonoBehaviour
             clockedIn=true;
 
             EventManager.Current.OnClockIn();
+
+            AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIClockIn, transform.position, false);
         }
     }
 }
