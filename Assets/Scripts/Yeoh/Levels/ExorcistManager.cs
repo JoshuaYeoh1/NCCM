@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EasyUI.Toast;
 
 public enum ExorcistType
 {
@@ -136,7 +137,12 @@ public class ExorcistManager : MonoBehaviour
 
             AudioManager.Current.PlaySFX(SFXManager.Current.sfxUIExorcistUpdate, transform.position, false);
         }
-        else Debug.Log($"No anomaly found. You prank called the {exorcistType} wtf");
+        else
+        {
+            string msg = $"No anomaly found. You prank called the {exorcistType} wtf";
+            Debug.Log(msg);
+            Toast.Show(msg, 3, ToastColor.Orange);
+        }
 
         Invoke(nameof(Cooldown), Random.Range(cooldownTime.x, cooldownTime.y));
     }

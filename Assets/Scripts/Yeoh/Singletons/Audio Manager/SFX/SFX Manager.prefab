@@ -107,8 +107,7 @@ MonoBehaviour:
   sfxSoundPitchLoop:
   - {fileID: 8300000, guid: ae29ebeecf0492d49adbaeff21049436, type: 3}
   sfxExorciseFailScream:
-  - {fileID: 8300000, guid: 0490b253e238f3f4ea2c80e74a1d3275, type: 3}
-  - {fileID: 8300000, guid: 8582800cfb29f9e4f9c33d88ab36e8c8, type: 3}
+  - {fileID: 8300000, guid: ef4b866894a86d6448f4edf732d9e6d5, type: 3}
   sfxStaticLoop:
   - {fileID: 8300000, guid: a7b61ae861105d54f8f16904786a6a2c, type: 3}
   sfxJumpscare:

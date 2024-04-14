@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using EasyUI.Toast;
 
 public class EventManager : MonoBehaviour
 {
@@ -168,7 +169,9 @@ public class EventManager : MonoBehaviour
     {
         AnomalyExpelEvent?.Invoke(anomaly);
 
-        Debug.Log($"{anomaly.name} got expelled");
+        string msg = $"{anomaly.name} has left";
+        Debug.Log(msg);
+        Toast.Show(msg, 3, ToastColor.Green);
     }
     public void OnAnomalyDespawn(GameObject anomaly)
     {
@@ -191,13 +194,17 @@ public class EventManager : MonoBehaviour
     {
         ExorciseSuccessEvent?.Invoke(exorcistType, anomaly);
 
-        Debug.Log($"{exorcistType} removed {anomaly.name}");
+        string msg = $"{exorcistType} exorcised {anomaly.name}";
+        Debug.Log(msg);
+        Toast.Show(msg, 3, ToastColor.Green);
     }
     public void OnExorcistDeath(ExorcistType exorcistType)
     {
         ExorcistDeathEvent?.Invoke(exorcistType);
 
-        Debug.Log($"Wrong call! {exorcistType} was killed.");
+        string msg = $"Wrong call! {exorcistType} was killed.";
+        Debug.Log(msg);
+        Toast.Show(msg, 3, ToastColor.Red);
     }
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

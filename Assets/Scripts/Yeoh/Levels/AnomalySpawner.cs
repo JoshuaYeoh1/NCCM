@@ -94,6 +94,7 @@ public class AnomalySpawner : MonoBehaviour
         if(room==null || !spot) return;
 
         GameObject spawned = Instantiate(prefab);
+        spawned.name = prefab.name;
 
         EventManager.Current.OnAnomalySpawn(spawned, room, spot);
 
