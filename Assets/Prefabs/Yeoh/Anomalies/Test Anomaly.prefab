@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b432ecd0897bc844eae3ad34b1bdce83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creatureType: 0
+  creatureType: 2
   type: 0
   move: {fileID: 0}
   stun: {fileID: 0}

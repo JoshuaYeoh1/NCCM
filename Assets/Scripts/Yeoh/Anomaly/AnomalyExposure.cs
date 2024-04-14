@@ -21,12 +21,18 @@ public class AnomalyExposure : MonoBehaviour
 
     void Start()
     {
-        RandomizeMaxExposure();
+        ResetAll();
     }
 
-    void RandomizeMaxExposure()
+    public void ResetAll()
     {
+        currentExposure=0;
+
         currentMaxExposure = Random.Range(maxExposure.x, maxExposure.y);
+
+        attackedShutter=false;
+
+        canJumpscare=false;
     }
 
     public void IncreaseExposure()
@@ -45,24 +51,20 @@ public class AnomalyExposure : MonoBehaviour
         return currentExposure >= currentMaxExposure;
     }
 
-    public void CheckAttack()
-    {
-        if(IsExposureMax())
-        {
-            if(LevelManager.Current.shutterClosed)
-            {
-                attackedShutter=true;
-
-                EventManager.Current.OnAnomalyAttack(gameObject, damage);
-
-                currentExposure=0;
-
-                RandomizeMaxExposure();
-            }
-            else canJumpscare=true;
-        }
-    }
-
     [HideInInspector] public bool attackedShutter;
     [HideInInspector] public bool canJumpscare;
+
+    public void CheckAttack()
+    {
+        if(!IsExposureMax()) return;
+        
+        if(LevelManager.Current.shutterClosed)
+        {
+            attackedShutter=true;
+
+            EventManager.Current.OnAnomalyAttack(gameObject, damage);
+        }
+        else canJumpscare=true;
+    }
+    
 }

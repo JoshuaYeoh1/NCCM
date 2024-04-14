@@ -53,7 +53,10 @@ public class AnomalyStateMachine : MonoBehaviour
             }
             else if(anomaly.exposure.attackedShutter)
             {
-                anomaly.exposure.attackedShutter=false;
+                EventManager.Current.OnAnomalyExpel(anomaly.gameObject);
+
+                anomaly.exposure.ResetAll();
+
                 return true;
             }
             return false;

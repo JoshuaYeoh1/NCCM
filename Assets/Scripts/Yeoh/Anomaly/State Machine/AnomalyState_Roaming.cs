@@ -18,7 +18,7 @@ public class AnomalyState_Roaming : BaseState
         Debug.Log($"{anomaly.gameObject.name} State: {Name}");
 
         anomaly.stun.ResetStuns();
-        anomaly.exposure.currentExposure=0;
+        anomaly.exposure.ResetAll();
 
         anomaly.move.StartPatrol();
     }
