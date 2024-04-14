@@ -6,8 +6,6 @@ public class AnomalyExposure : MonoBehaviour
 {
     Anomaly anomaly;
 
-    public AnomalyType type;
-
     public Vector2 maxExposure = new Vector2(8, 12);
     float currentMaxExposure;
 

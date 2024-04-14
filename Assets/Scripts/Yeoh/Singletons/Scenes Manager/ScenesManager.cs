@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public enum Scenes // must be in the same order as in the build settings, and case sensitive
 {
-    MainMenu,
     Yeoh1,
+    LoseScene,
+    WinScene,
+    MainMenu,
 }
 
 public class ScenesManager : MonoBehaviour
@@ -110,13 +112,6 @@ public class ScenesManager : MonoBehaviour
         }
 
         SceneManager.LoadScene(sceneIndex);
-
-        //if(anim) PlayTransition("in", Random.Range(1, transitionTypes+1));
-
-        // ChangeMusic();
-
-        // ToggleAmb(false);
-        // if(!IsSceneMainMenu()) ToggleAmb(true);
     }
 
     public void ShowTransition(bool toggle)

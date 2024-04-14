@@ -4,21 +4,38 @@ using UnityEngine;
 
 public class TestAnomaly : MonoBehaviour
 {
+    Anomaly anomaly;
+
+    void Awake()
+    {
+        anomaly=GetComponent<Anomaly>();
+    }
+
+    public GameObject jumpscarePrefab;
+
     void OnEnable()
     {
         EventManager.Current.AnomalyJumpscareEvent += OnAnomalyJumpscare;
     }
     void OnDisable()
     {
-        EventManager.Current.AnomalyDespawnEvent -= OnAnomalyJumpscare;
+        EventManager.Current.AnomalyJumpscareEvent -= OnAnomalyJumpscare;
     }
 
     void OnAnomalyJumpscare(GameObject predator)
     {
         if(predator!=gameObject) return;
 
-        EventManager.Current.OnAnomalyTeleportRandom(predator);
+        Instantiate(jumpscarePrefab);
 
+        CameraManager.Current.Shake(.6f);
+
+        AudioManager.Current.PlaySFX(SFXManager.Current.sfxJumpscare, transform.position, false);
+
+        anomaly.exposure.canJumpscare=false;
+
+        EventManager.Current.OnAnomalyTeleportRandom(predator);
+        
         //EventManager.Current.OnAnomalyDespawn(predator);
     }
 }

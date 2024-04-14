@@ -54,3 +54,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0490b253e238f3f4ea2c80e74a1d3275, type: 3}
   sfxStaticLoop:
   - {fileID: 8300000, guid: a7b61ae861105d54f8f16904786a6a2c, type: 3}
+  sfxJumpscare:
+  - {fileID: 8300000, guid: 5bef16967ee32314880125c713f4bc55, type: 3}

@@ -17,7 +17,7 @@ public class Toyol : MonoBehaviour
     }
     void OnDisable()
     {
-        EventManager.Current.AnomalyDespawnEvent -= OnAnomalyJumpscare;
+        EventManager.Current.AnomalyJumpscareEvent -= OnAnomalyJumpscare;
     }
 
     void OnAnomalyJumpscare(GameObject predator)

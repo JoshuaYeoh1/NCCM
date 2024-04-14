@@ -18,6 +18,7 @@ public enum AnomalyType
 public class Anomaly : MonoBehaviour
 {
     public CreatureType creatureType;
+    public AnomalyType type;
 
     [HideInInspector] public AnomalyMove move;
     [HideInInspector] public AnomalyStun stun;

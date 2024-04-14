@@ -18,6 +18,6 @@ public class SFXManager : MonoBehaviour
     public AudioClip[] sfxExorciseSuccessScream;
     public AudioClip[] sfxExorciseFailScream;
     public AudioClip[] sfxStaticLoop;
-
+    public AudioClip[] sfxJumpscare;
 
 }

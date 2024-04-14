@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creatureType: 1
+  type: 1
   move: {fileID: 0}
   stun: {fileID: 0}
   exposure: {fileID: 0}
@@ -100,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ecb678da2e6514d81cff7c612a312e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
   maxExposure: {x: 8, y: 12}
   currentExposure: 0
   damage: 1
@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12764ba2861be84ca0499a746ddec51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpscarePrefab: {fileID: 8486040213120997276, guid: a6d08a88431e12148bc69eef46372477,
+    type: 3}
 --- !u!1 &4515040610068683874
 GameObject:
   m_ObjectHideFlags: 0

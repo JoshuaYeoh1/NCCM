@@ -52,6 +52,8 @@ public class Level1 : MonoBehaviour
             spawner.anomalies.Clear();
 
             spawner.maxActiveAnomalies=0;
+
+            ScenesManager.Current.TransitionTo(Scenes.WinScene);
         }
     }
 }

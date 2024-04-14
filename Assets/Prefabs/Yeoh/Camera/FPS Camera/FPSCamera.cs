@@ -11,6 +11,8 @@ public class FPSCamera : MonoBehaviour
     CinemachineVirtualCamera cineCam;
     CinemachinePOV cinePOV;
 
+    public bool firstPersonEnabled=true;
+
     void Awake()
     {
         cineCam = GetComponent<CinemachineVirtualCamera>();
@@ -20,17 +22,14 @@ public class FPSCamera : MonoBehaviour
     void OnEnable()
     {
         EventManager.Current.ToggleFirstPersonEvent += OnToggleFirstPerson;
+
+        OnToggleFirstPerson(firstPersonEnabled);
     }
     void OnDisable()
     {
         EventManager.Current.ToggleFirstPersonEvent -= OnToggleFirstPerson;
-    }
 
-    public bool firstPersonEnabled=true;
-
-    void Start()
-    {
-        OnToggleFirstPerson(firstPersonEnabled);
+        OnToggleFirstPerson(false);
     }
 
     void OnToggleFirstPerson(bool toggle)
