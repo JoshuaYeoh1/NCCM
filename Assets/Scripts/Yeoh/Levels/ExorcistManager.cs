@@ -139,9 +139,9 @@ public class ExorcistManager : MonoBehaviour
         }
         else
         {
-            string msg = $"No anomaly found. You prank called the {exorcistType} wtf";
+            string msg = $"<b>No anomaly found</b>. You prank called the <color=orange>{exorcistType}</color> wtf";
             Debug.Log(msg);
-            Toast.Show(msg, 3, ToastColor.Orange);
+            Toast.Show(msg, 3, EventManager.Current.toastColor, ToastPosition.TopCenter);
         }
 
         Invoke(nameof(Cooldown), Random.Range(cooldownTime.x, cooldownTime.y));

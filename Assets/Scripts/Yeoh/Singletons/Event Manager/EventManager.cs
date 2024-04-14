@@ -169,9 +169,9 @@ public class EventManager : MonoBehaviour
     {
         AnomalyExpelEvent?.Invoke(anomaly);
 
-        string msg = $"{anomaly.name} has left";
+        string msg = $"<b>{anomaly.name}</b> has <color=green>left</color>";
         Debug.Log(msg);
-        Toast.Show(msg, 3, ToastColor.Green);
+        Toast.Show(msg, 3, toastColor, ToastPosition.TopCenter);
     }
     public void OnAnomalyDespawn(GameObject anomaly)
     {
@@ -194,17 +194,17 @@ public class EventManager : MonoBehaviour
     {
         ExorciseSuccessEvent?.Invoke(exorcistType, anomaly);
 
-        string msg = $"{exorcistType} exorcised {anomaly.name}";
+        string msg = $"<b>{exorcistType}</b> <color=green>exorcised</color> <b>{anomaly.name}</b>";
         Debug.Log(msg);
-        Toast.Show(msg, 3, ToastColor.Green);
+        Toast.Show(msg, 3, toastColor, ToastPosition.TopCenter);
     }
     public void OnExorcistDeath(ExorcistType exorcistType)
     {
         ExorcistDeathEvent?.Invoke(exorcistType);
 
-        string msg = $"Wrong call! {exorcistType} was killed.";
+        string msg = $"<b>Wrong call!</b> {exorcistType} was <color=red>killed</color>";
         Debug.Log(msg);
-        Toast.Show(msg, 3, ToastColor.Red);
+        Toast.Show(msg, 3, toastColor, ToastPosition.TopCenter);
     }
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -221,4 +221,5 @@ public class EventManager : MonoBehaviour
         CamStaticEvent?.Invoke(staticTime);
     }
     
+    public Color toastColor = new Color(0,0,0,.75f);
 }
